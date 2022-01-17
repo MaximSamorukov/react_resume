@@ -6,7 +6,7 @@ import { usePageSize } from "../hooks/hooks";
 import { HeaderItem } from "./header_item";
 
 export const Header = () => {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState('ru');
   const { name, surname, contacts, profession } = data[lang];
   const toggleLang = () => {
     setLang((prev) => {
