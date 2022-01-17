@@ -11,5 +11,18 @@ export const data = {
       email: 'maxim.samorukov@gmail.com',
       website: 'website',
     }
-  }
+  },
+  ru: {
+    name: 'Максим',
+    surname: 'Саморуков',
+    birthday: '07-12-1981',
+    profession: 'фронтенд разработчик',
+    contacts: {
+      phone: '8-925-026-17-37',
+      whatsup: 'whatsup',
+      telegram: 'telegram',
+      email: 'maxim.samorukov@gmail.com',
+      website: 'website',
+    }
+  },
 }

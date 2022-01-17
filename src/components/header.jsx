@@ -1,35 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { data } from "../data/data";
-import { Row, Col, Layout, Avatar } from 'antd';
+import { Row, Col, Layout, Avatar, Space } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
+import { usePageSize } from "../hooks/hooks";
+import { HeaderItem } from "./header_item";
 
 export const Header = () => {
-  const { name, surname, contacts, profession } = data.en;
+  const [lang, setLang] = useState('en');
+  const { name, surname, contacts, profession } = data[lang];
+  const toggleLang = () => {
+    setLang((prev) => {
+      if (prev === 'en') return 'ru';
+      return 'en';
+    });
+  }
+  const [ width ] = usePageSize();
   const { Content } = Layout;
+  const isPresent = width > 750;
+  const avatarSize = isPresent ? 3 : 7;
+  const contentSize = isPresent ? 12 : 16;
   return (
     <Content>
       <Row>
-        <Col span={4} />
-        <Col span={3}>
+        <Col span={24}>
+          <div
+            style={{
+              marginRight: 'auto',
+              marginLeft: 'auto',
+              width: 200,
+            }}
+          >
+            <button style={{
+              border: 'none',
+
+            }} onClick={toggleLang}>
+              EN / RU
+            </button>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        {isPresent && <Col span={4}/>}
+        <Col span={avatarSize}>
           <Avatar
             style={{
-              margin: 20,
+              margin: 10,
             }}
-            size={{ xs: 48, sm: 64, md: 80, lg: 128, xl: 160, xxl: 200 }}
+            size={{ xs: 80, sm: 80, md: 80, lg: 128, xl: 160, xxl: 200 }}
             icon={<AntDesignOutlined />}
           />
         </Col>
-        <Col span={13}>
+        <Col span={1}/>
+        <Col span={contentSize}>
           <div style={{
-            margin: 20,
+            marginTop: 10,
           }}>
-            <div>{`${name} ${surname}`}</div>
-            <div>{profession}</div>
-            <div>{contacts.phone}</div>
-            <div>{contacts.email}</div>
+            <HeaderItem text={`${name} ${surname}`} />
+            <HeaderItem text ={profession} />
+            <HeaderItem text={contacts.phone} />
+            <HeaderItem text={contacts.email} />
           </div>
         </Col>
-        <Col span={4} />
+        {isPresent && <Col span={4} />}
       </Row>
     </Content>
   )
