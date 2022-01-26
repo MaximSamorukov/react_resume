@@ -1,0 +1,8 @@
+.wrapper-outer {
+  padding: 10px;
+}
+
+.wrapper-inner {
+  border: 4px solid rgb(169, 157, 157);
+  border-radius: 30px;
+}

@@ -59,6 +59,8 @@ export const Header = () => {
             <HeaderItem text ={profession} />
             <HeaderItem text={contacts.phone} />
             <HeaderItem text={contacts.email} />
+            <HeaderItem text={contacts.telegram} />
+            <HeaderItem text={contacts.website} />
           </div>
         </Col>
         {isPresent && <Col span={4} />}
