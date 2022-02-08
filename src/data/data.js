@@ -2,12 +2,13 @@ export const data = {
   ru: {
     name: 'Максим',
     surname: 'Саморуков',
+    lastname: 'Львович',
     birthday: '07-12-1981',
     profession: 'фронтенд разработчик',
     contacts: {
       phone: '8-925-026-17-37',
       whatsup: 'whatsup',
-      telegram: 'telegram',
+      telegram: 'Maksim_Samorukov',
       email: 'maxim.samorukov@gmail.com',
       website: 'website',
     },
@@ -31,37 +32,19 @@ export const data = {
     ],
     instruments: [
       {
-        label: ['HTML', 'Less', 'SASS'],
+        label: ['JavaScript', 'React', 'Redux'],
       },
       {
-        label: ['JavaScript', 'Node.js'],
+        label: ['HTML', 'CSS', 'Less', 'SC(A)SS'],
       },
       {
-        label: ['React', 'Redux'],
+        label: ['Git', 'Webpack', 'VSCode'],
       },
       {
         label: ['Figma', 'Avocode'],
       },
-      {
-        label: ['Git'],
-      },
-      {
-        label: ['VSCode', 'Webpack'],
-      },
     ],
     experience: [
-      {
-        company: "Махуру",
-        title: "Младший разработчик интерфейсов",
-        start: '01.02.2021',
-        end: '01.08.2021',
-        description: [
-          'Участие в проекте поддержки веб приложения (React, TypeScript, SCSS)',
-          'Использование библиотек Ant Design, Leaflet',
-          'Работа с Rest Api',
-          'Система контроля версий Gitlab',
-        ]
-      },
       {
         company: "Махуру",
         title: "Разработчик интерфейсов",
@@ -74,6 +57,18 @@ export const data = {
           'Работа с Rest Api',
           'Система контроля версий Gitlab, Bitbucket',
           'Документация в Confluence',
+        ]
+      },
+      {
+        company: "Махуру",
+        title: "Младший разработчик интерфейсов",
+        start: '01.02.2021',
+        end: '01.08.2021',
+        description: [
+          'Участие в проекте поддержки веб приложения (React, TypeScript, SCSS)',
+          'Использование библиотек Ant Design, Leaflet',
+          'Работа с Rest Api',
+          'Система контроля версий Gitlab',
         ]
       },
     ],
@@ -261,12 +256,13 @@ export const data = {
   en: {
     name: 'Maksim',
     surname: 'Samorukov',
+    lastname: 'Lvovich',
     birthday: '07-12-1981',
     profession: 'frontend engineer',
     contacts: {
       phone: '8-925-026-17-37',
       whatsup: 'whatsup',
-      telegram: 'telegram',
+      telegram: 'Maksim_Samorukov',
       email: 'maxim.samorukov@gmail.com',
       website: 'website',
     },
@@ -290,22 +286,16 @@ export const data = {
     ],
     instruments: [
       {
-        label: ['HTML', 'Less', 'SASS'],
+        label: ['JavaScript', 'React', 'Redux'],
       },
       {
-        label: ['JavaScript', 'Node.js'],
+        label: ['HTML', 'CSS', 'Less', 'SC(A)SS'],
       },
       {
-        label: ['React', 'Redux'],
+        label: ['Git', 'Webpack', 'VSCode'],
       },
       {
         label: ['Figma', 'Avocode'],
-      },
-      {
-        label: ['Git'],
-      },
-      {
-        label: ['VSCode', 'Webpack'],
       },
     ],
     experience: [

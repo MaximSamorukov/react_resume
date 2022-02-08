@@ -7,3 +7,13 @@ export const HeaderItem = ({ text, icon }) => {
     </div>
   )
 }
+
+const telegramLink = (text) => <a href={`https://t.me/${text}`}>{`@${text}`}</a>
+
+export const TelegramHeaderItem = ({ text }) => {
+  return (
+    <div>
+      {telegramLink(text)}
+    </div>
+  )
+}

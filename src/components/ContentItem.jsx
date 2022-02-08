@@ -4,7 +4,7 @@ import { Row, Col, Layout, Avatar, Space } from 'antd';
 import { AntDesignOutlined } from '@ant-design/icons';
 import { usePageSize } from "../hooks/hooks";
 import { HeaderItem } from "./header_item";
-import { titles } from '../data/libraries';
+import { titles_en, titles_ru } from '../data/libraries';
 
 export const ContentItem = ({ title, children }) => {
   const { name, surname, contacts, profession } = data['ru'];
@@ -14,20 +14,30 @@ export const ContentItem = ({ title, children }) => {
   const avatarSize = isPresent ? 3 : 7;
   const contentSize = isPresent ? 12 : 16;
   return (
-    <Content>
-      <Row>
-        {isPresent && <Col span={4}/>}
-        <Col span={5}><h3>{titles[title]}</h3></Col>
-        <Col span={8} />
-        {isPresent && <Col span={4} />}
-      </Row>
-      <Row>
-        {isPresent && <Col span={4}/>}
-        <Col>
-          {children}
-        </Col>
-        {isPresent && <Col span={4} />}
-      </Row>
-    </Content>
+    <div>
+      <Content style={{ marginTop: 15 }}>
+        <Row>
+          {isPresent && <Col span={4}/>}
+          <Col span={5}><div className="ui large header">{titles_ru[title]}</div></Col>
+          <Col span={8}>
+            <div style={{
+              backgroundColor: 'blue',
+              maxHeight: 3,
+              height: 3,
+              width: '100%',
+              marginTop: 13
+            }} />
+          </Col>
+          {isPresent && <Col span={4} />}
+        </Row>
+        <Row>
+          {isPresent && <Col span={4}/>}
+          <Col>
+            {children}
+          </Col>
+          {isPresent && <Col span={4} />}
+        </Row>
+      </Content>
+    </div>
   )
 }

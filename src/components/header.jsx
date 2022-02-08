@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { data } from "../data/data";
 import { Row, Col, Layout, Avatar, Space } from 'antd';
-import { AntDesignOutlined } from '@ant-design/icons';
 import { usePageSize } from "../hooks/hooks";
-import { HeaderItem } from "./header_item";
+import { HeaderItem, TelegramHeaderItem } from "./header_item";
 
 export const Header = () => {
   const [lang, setLang] = useState('ru');
-  const { name, surname, contacts, profession } = data[lang];
+  const { name, surname, lastname,  contacts, profession } = data[lang];
   const toggleLang = () => {
     setLang((prev) => {
       if (prev === 'en') return 'ru';
@@ -41,25 +40,16 @@ export const Header = () => {
       </Row>
       <Row>
         {isPresent && <Col span={4}/>}
-        <Col span={avatarSize}>
-          <Avatar
-            style={{
-              margin: 10,
-            }}
-            size={{ xs: 80, sm: 80, md: 80, lg: 128, xl: 160, xxl: 200 }}
-            icon={<AntDesignOutlined />}
-          />
-        </Col>
-        <Col span={1}/>
         <Col span={contentSize}>
           <div style={{
             marginTop: 10,
+            paddingLeft: 23,
           }}>
-            <HeaderItem text={`${name} ${surname}`} />
+            <HeaderItem text={`${name} ${surname} ${lastname}`} />
             <HeaderItem text ={profession} />
             <HeaderItem text={contacts.phone} />
             <HeaderItem text={contacts.email} />
-            <HeaderItem text={contacts.telegram} />
+            <TelegramHeaderItem text={contacts.telegram} />
             <HeaderItem text={contacts.website} />
           </div>
         </Col>

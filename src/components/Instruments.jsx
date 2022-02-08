@@ -3,18 +3,18 @@ import { data } from '../data/data';
 
 const Instruments = () => {
   return (
-    <>
+    <ul className="ui list">
       {
-        data.ru.instruments.map(({ label }) => {
+        data.ru.instruments.map(({ label }, index) => {
           return (
-            <li>{label.reduce((acc, item) => {
+            <div key={index} className="item">{label.reduceRight((acc, item) => {
               return `${item}, ${acc}`;
             }, '')}
-            </li>
+            </div>
           )
         })
       }
-    </>
+    </ul>
   )
 }
 
