@@ -46,9 +46,6 @@ export const JobItem = ({ item }) => {
             <div
               key={index}
               className="item"
-              style={{
-                //height: 22
-              }}
             >{i}</div>
           ))}
         </div>
