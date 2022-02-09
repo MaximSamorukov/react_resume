@@ -300,20 +300,8 @@ export const data = {
     ],
     experience: [
       {
-        company: "Махуру",
-        title: "Младший разработчик интерфейсов",
-        start: '01.02.2021',
-        end: '01.08.2021',
-        description: [
-          'Участие в проекте поддержки веб приложения (React, TypeScript, SCSS)',
-          'Использование библиотек Ant Design, Leaflet',
-          'Работа с Rest Api',
-          'Система контроля версий Gitlab',
-        ]
-      },
-      {
-        company: "Махуру",
-        title: "Разработчик интерфейсов",
+        company: "Mahuru",
+        title: "React developer",
         start: '01.08.2021',
         end: Date.now(),
         description: [
@@ -323,6 +311,18 @@ export const data = {
           'Работа с Rest Api',
           'Система контроля версий Gitlab, Bitbucket',
           'Документация в Confluence',
+        ]
+      },
+      {
+        company: "Mahuru",
+        title: "React developer, junior",
+        start: '01.02.2021',
+        end: '01.08.2021',
+        description: [
+          'Участие в проекте поддержки веб приложения (React, TypeScript, SCSS)',
+          'Использование библиотек Ant Design, Leaflet',
+          'Работа с Rest Api',
+          'Система контроля версий Gitlab',
         ]
       },
     ],

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../context";
 
 export const JobItem = ({ item }) => {
+  const { language: { language }} = useContext(LanguageContext);
   const { company, title, start, end, description } = item;
+  const nowDaysString = language === 'en' ? 'p.t.' : 'н.в.';
   return (
     <div className="ui relaxed divided list">
       <div className="content">
@@ -21,7 +24,7 @@ export const JobItem = ({ item }) => {
             }}>
               <span>{start}</span>
               <span> - </span>
-              <span>{typeof end === 'string' ? end : 'н.в.'}</span>
+              <span>{typeof end === 'string' ? end : nowDaysString}</span>
             </div>
         </div>
         <div

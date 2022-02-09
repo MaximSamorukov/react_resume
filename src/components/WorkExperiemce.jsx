@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { JobItem } from './Job_item';
 import { data } from '../data/data';
-
-export const WorkExperience = () => {
+import { LanguageContext } from "../context";
+export const WorkExperience = (props) => {
+  const { language: { language } } = useContext(LanguageContext);
+  console.log(language);
   return (
     <ul className="ui list">
       {
-        data.ru.experience.map((item, index) => {
+        data[language].experience.map((item, index) => {
           return (
             <JobItem key={index} item={item} />
           )
