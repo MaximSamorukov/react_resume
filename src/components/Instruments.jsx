@@ -5,7 +5,12 @@ import { data } from '../data/data';
 const Instruments = () => {
   const { language: { language }} = useContext(LanguageContext);
   return (
-    <ul className="ui list">
+    <ul
+      style={{
+        marginLeft: 40,
+      }}
+      className="ui bulleted list"
+    >
       {
         data[language].instruments.map(({ label }, index) => {
           return (

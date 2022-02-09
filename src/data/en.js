@@ -12,7 +12,7 @@ export const en = {
   surname: 'Samorukov',
   lastname: 'Lvovich',
   birthday: '07-12-1981',
-  profession: 'frontend engineer',
+  profession: 'frontend developer',
   contacts: {
     phone: '8-925-026-17-37',
     whatsup: 'whatsup',

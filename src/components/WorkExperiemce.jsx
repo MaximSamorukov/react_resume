@@ -4,7 +4,6 @@ import { data } from '../data/data';
 import { LanguageContext } from "../context";
 export const WorkExperience = (props) => {
   const { language: { language } } = useContext(LanguageContext);
-  console.log(language);
   return (
     <ul className="ui list">
       {

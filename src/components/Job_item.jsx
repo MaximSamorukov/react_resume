@@ -6,52 +6,55 @@ export const JobItem = ({ item }) => {
   const { company, title, start, end, description } = item;
   const nowDaysString = language === 'en' ? 'p.t.' : 'н.в.';
   return (
-    <div className="ui relaxed divided list">
-      <div className="content">
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-start'
+    <div
+      className="content"
+      style={{
+        marginTop: 10
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-start'
+        }}>
+          <div style={{
+            marginRight: 10,
           }}>
-            <div style={{
-              marginRight: 10,
-            }}>
-              <h4 className="ui header">{company}</h4>
-            </div>
-            <div style={{
-              lineHeight: '18px'
-            }}>
-              <span>{start}</span>
-              <span> - </span>
-              <span>{typeof end === 'string' ? end : nowDaysString}</span>
-            </div>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-start'
+            <h4 className="ui header">{company}</h4>
+          </div>
+          <div style={{
+            lineHeight: '18px'
           }}>
-            <div style={{
-              marginRight: 10,
-              marginTop: 8,
-            }}>
-              <span >{title}</span>
-            </div>
-        </div>
+            <span>{start}</span>
+            <span> - </span>
+            <span>{typeof end === 'string' ? end : nowDaysString}</span>
+          </div>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-start'
+        }}>
+          <div style={{
+            marginRight: 10,
+            marginTop: 8,
+          }}>
+            <span >{title}</span>
+          </div>
+      </div>
 
 
-        <div
-          className="ui bulleted list"
-        >
-          {description.map((i, index) => (
-            <div
-              key={index}
-              className="item"
-            >{i}</div>
-          ))}
-        </div>
+      <div
+        className="ui bulleted list"
+      >
+        {description.map((i, index) => (
+          <div
+            key={index}
+            className="item"
+          >{i}</div>
+        ))}
       </div>
     </div>
   )
