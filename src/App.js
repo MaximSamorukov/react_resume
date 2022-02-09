@@ -4,6 +4,7 @@ import { ContentItem } from "./components/ContentItem";
 import { Wrapper } from './components/Wrapper';
 import { Instruments } from './components/Instruments';
 import { WorkExperience } from './components/WorkExperiemce';
+import { Profiles } from './components/Profiles.jsx';
 
 function App() {
   return (
@@ -13,6 +14,12 @@ function App() {
         backgroundColor: 'white',
       }}>
         <Header />
+        <ContentItem style={{
+          marginRight: 'auto',
+          marginLeft: 'auto'
+        }} title="profiles">
+          <Profiles />
+        </ContentItem>
         <ContentItem title="stack">
           <Instruments />
         </ContentItem>

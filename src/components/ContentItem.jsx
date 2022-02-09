@@ -6,7 +6,7 @@ import { LanguageContext } from "../context";
 import { HeaderItem } from "./header_item";
 import { titles_en, titles_ru } from '../data/libraries';
 
-export const ContentItem = ({ title, children }) => {
+export const ContentItem = ({ title, children, style = {} }) => {
   const { language: { language }} = useContext(LanguageContext);
   const [ width ] = usePageSize();
   const { Content } = Layout;
@@ -17,21 +17,21 @@ export const ContentItem = ({ title, children }) => {
       <Content style={{ marginTop: 15 }}>
         <Row>
           {isPresent && <Col span={4}/>}
-          <Col span={5}><div className="ui large header">{titles[title]}</div></Col>
+          <Col span={5}><div className="ui middle header">{titles[title]}</div></Col>
           <Col span={8}>
-            <div style={{
+            {/*<div style={{
               backgroundColor: 'blue',
-              maxHeight: 3,
-              height: 3,
+              maxHeight: 2,
+              height: 2,
               width: '100%',
               marginTop: 13
-            }} />
+            }} />*/}
           </Col>
           {isPresent && <Col span={4} />}
         </Row>
         <Row>
           {isPresent && <Col span={4}/>}
-          <Col>
+          <Col style={style}>
             {children}
           </Col>
           {isPresent && <Col span={4} />}
