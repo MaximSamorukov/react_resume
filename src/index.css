@@ -1,8 +1,14 @@
 .wrapper-outer {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .wrapper-inner {
   border: 4px solid rgb(169, 157, 157);
   border-radius: 30px;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
 }

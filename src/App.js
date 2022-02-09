@@ -5,6 +5,7 @@ import { Wrapper } from './components/Wrapper';
 import { Instruments } from './components/Instruments';
 import { WorkExperience } from './components/WorkExperiemce';
 import { Profiles } from './components/Profiles.jsx';
+import { Courses } from './components/Courses.jsx';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <WorkExperience />
         </ContentItem>
         <ContentItem title="education">
-          <Instruments />
+          <Courses />
         </ContentItem>
         <ContentItem title="projects">
           <Instruments />
