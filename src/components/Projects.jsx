@@ -9,15 +9,21 @@ const Render = ( _ , { repositoryUrl, taskUrl, deployUrl }) => {
   const links = language === 'en' ? links_table_en : links_table_ru;
   return (
   <>
+  {repositoryUrl && (
     <Row>
       <a href={repositoryUrl}>{links.repository}</a>
     </Row>
-    <Row>
-      <a href={taskUrl}>{links.task}</a>
-    </Row>
-    <Row>
-      <a href={deployUrl}>{links.deploy}</a>
-    </Row>
+  )}
+    {taskUrl && (
+      <Row>
+        <a href={taskUrl}>{links.task}</a>
+      </Row>
+    )}
+    {deployUrl && (
+      <Row>
+        <a href={deployUrl}>{links.deploy}</a>
+      </Row>
+    )}
   </>
 )}
 
