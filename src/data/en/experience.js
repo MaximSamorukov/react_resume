@@ -5,12 +5,12 @@ export const experience = [
     start: '01.08.2021',
     end: Date.now(),
     description: [
-      'Участие в проекте создания веб приложения (React, TypeScript, SCSS)',
-      'Написание функций обработки данных',
-      'Написание кастомных хуков',
-      'Работа с Rest Api',
-      'Система контроля версий Gitlab, Bitbucket',
-      'Документация в Confluence',
+      'developing web application  (React, TypeScript, SCSS)',
+      'writing processing data functions in JS',
+      'writing custom hooks in React JS',
+      'working with Rest Api',
+      'version control systems Gitlab, Bitbucket',
+      'documentation in Confluence',
     ]
   },
   {
@@ -19,10 +19,10 @@ export const experience = [
     start: '01.02.2021',
     end: '01.08.2021',
     description: [
-      'Участие в проекте поддержки веб приложения (React, TypeScript, SCSS)',
-      'Использование библиотек Ant Design, Leaflet',
-      'Работа с Rest Api',
-      'Система контроля версий Gitlab',
+      'developing web application  (React, TypeScript, SCSS)',
+      'working with libraries Ant Design, Leaflet',
+      'working with Rest Api',
+      'version control system Gitlab',
     ]
   },
 ];
