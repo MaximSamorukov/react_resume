@@ -26,7 +26,7 @@ const columns = [
     title: 'Title',
     dataIndex: 'title',
     key: 'title',
-    width: '250px',
+    width: '150px',
   },
   {
     title: 'Description, Stack',
@@ -45,11 +45,7 @@ const columns = [
 const Projects = () => {
   const { language: { language }} = useContext(LanguageContext);
   return (
-    <div
-      style={{
-        marginLeft: 40,
-      }}
-    >
+    <div>
       <Table
         dataSource={data[language].projects}
         columns={columns}
