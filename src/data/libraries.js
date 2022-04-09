@@ -14,10 +14,23 @@ const titles_en = {
   stack: "Technical skills",
   projects: "Projects",
   profiles: "Profiles",
+}
 
+const links_table_ru = {
+  deploy: "Деплой",
+  task: "Задание",
+  repository: "Репозиторий",
+}
+
+const links_table_en = {
+  deploy: "Deploy",
+  task: "Task",
+  repository: "Repository",
 }
 
 export {
   titles_en,
   titles_ru,
+  links_table_en,
+  links_table_ru,
 }

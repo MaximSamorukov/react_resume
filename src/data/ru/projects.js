@@ -1,14 +1,14 @@
 export const projects = [
   {
-    title: 'Covid dashbord. Обработка и представление данных представляемых api.covid19api.com',
-    description: 'HTML, CSS, JS',
+    title: 'Covid dashbord.',
+    description: 'Обработка и представление данных представляемых api.covid19api.com. HTML, CSS, JS',
     repositoryUrl: 'https://github.com/MaximSamorukov/covid',
     taskUrl: 'https://github.com/rolling-scopes-school/tasks/blob/master/tasks/covid-dashboard.md',
     deployUrl: 'https://pedantic-bhabha-137b93.netlify.app/',
   },
   {
-    title: 'Частичная реализация главной страницы сайта https://news.ycombinator.com/news. Тестовое задание на позицию фронтенд разработчик',
-    description: 'HTML, CSS, JS, React',
+    title: 'News Ycombinator',
+    description: 'Частичная реализация главной страницы сайта https://news.ycombinator.com/news. Тестовое задание на позицию фронтенд разработчик. HTML, CSS, JS, React',
     repositoryUrl: 'https://github.com/MaximSamorukov/avito-test',
     taskUrl: 'https://github.com/avito-tech/sx-frontend-trainee-assignment',
     deployUrl: 'https://determined-noether-6d7cb3.netlify.app/',
