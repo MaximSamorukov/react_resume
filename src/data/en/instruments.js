@@ -6,7 +6,7 @@ export const instruments = [
     label: ['HTML', 'CSS', 'Less', 'SC(A)SS'],
   },
   {
-    label: ['some experience in GraphQL и MongoDB'],
+    label: ['some experience in GraphQL and MongoDB'],
   },
   {
     label: ['Git', 'Webpack', 'VSCode'],
