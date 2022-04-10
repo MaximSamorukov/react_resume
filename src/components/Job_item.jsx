@@ -4,7 +4,7 @@ import { LanguageContext } from "../context";
 export const JobItem = ({ item }) => {
   const { language: { language }} = useContext(LanguageContext);
   const { company, title, start, end, description } = item;
-  const nowDaysString = language === 'en' ? 'p.t.' : 'н.в.';
+  const nowDaysString = language === 'en' ? 'present time' : 'н.в.';
   return (
     <div
       className="content"

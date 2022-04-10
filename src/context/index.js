@@ -1,6 +1,6 @@
 import react, { createContext, useState } from "react";
 
-const defaultLanguage = { language: 'ru' };
+const defaultLanguage = { language: 'en' };
 export const LanguageContext = createContext();
 
 const useToggleLanguage = () => {

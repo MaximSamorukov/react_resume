@@ -45,13 +45,19 @@ const columns = [
     dataIndex: 'repositoryUrl',
     key: 'repositoryUrl',
     render: Render,
+    width: '100px'
   },
 ]
 
 const Projects = () => {
   const { language: { language }} = useContext(LanguageContext);
   return (
-    <div>
+    <div
+      style={{
+        width: '900px',
+        marginLeft: 40,
+      }}
+    >
       <Table
         dataSource={data[language].projects}
         columns={columns}
