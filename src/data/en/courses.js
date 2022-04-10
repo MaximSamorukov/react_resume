@@ -1,6 +1,6 @@
 export const courses = [
   {
-    name: 'Hexlet, Фронтенд-разработчик',
+    name: 'Hexlet, Frontend web developer',
     description: [
       'Arrays',
       'Objects',
@@ -20,7 +20,7 @@ export const courses = [
     ]
   },
   {
-    name: 'Hexlet, Node.js-разработчик',
+    name: 'Hexlet, Node.js developer',
     description: [
       'Arrays',
       'Objects',
@@ -40,18 +40,18 @@ export const courses = [
     ],
   },
   {
-    name: 'HTML Academy, Frontend developer',
+    name: 'HTML Academy, Frontend web developer',
     description: ['HTML', 'CSS', 'Less'],
   },
   {
-    name: 'RSSchool, Frontend developer',
+    name: 'RSSchool, Frontend web developer',
     description: [
       'adaptive web applications',
       'SPA (using outside web api to get data, local storage usage)',
     ],
   },
   {
-    name: 'RSSchool, Node.js-developer',
+    name: 'RSSchool, Node.js developer',
     description: [
       'encryption / decryption cli application',
       'Express.js and MongoDB base application with logging, error handling and authorization',
