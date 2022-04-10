@@ -1,5 +1,26 @@
 export const projects = [
   {
+    title: 'Client side of React, GraphQL application.',
+    description: 'The application implements representation and CRUD methods of entities User and Post. The application includes two pages: the users list and user page with posts display. Also there are some popups forms used to create and update entities.',
+    repositoryUrl: 'https://github.com/MaximSamorukov/react_graphql_03.2022_client',
+    taskUrl: '',
+    deployUrl: '',
+  },
+  {
+    title: 'Server side of React, GraphQL, MongoDB application.',
+    description: 'The application, written in node.js, express.js with GraphQL, implements CRUD methods of entities User and Post. Entities are stored in MongoDB.',
+    repositoryUrl: 'https://github.com/MaximSamorukov/react_graphql_03.2022_server',
+    taskUrl: '',
+    deployUrl: '',
+  },
+  {
+    title: 'Resume',
+    description: 'This resume. Written in React with some elements from antd library, deployed in Vercel.',
+    repositoryUrl: 'https://github.com/MaximSamorukov/react_resume',
+    taskUrl: '',
+    deployUrl: 'https://react-resume-sandy.vercel.app/',
+  },
+  {
     title: 'Covid dashbord.',
     description: 'Parsing processing and presentation data from api.covid19api.com about covid spreading in the world and in different countries. HTML, CSS, JS',
     repositoryUrl: 'https://github.com/MaximSamorukov/covid',
