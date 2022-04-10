@@ -18,7 +18,7 @@ export const en = {
     whatsup: 'whatsup',
     telegram: 'Maksim_Samorukov',
     email: 'maxim.samorukov@gmail.com',
-    website: 'website',
+    website: 'https://react-resume-sandy.vercel.app/',
   },
   profiles,
   instruments,

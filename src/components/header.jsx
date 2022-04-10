@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { data } from "../data/data";
 import { Row, Col, Layout } from 'antd';
 import { usePageSize } from "../hooks/hooks";
-import { HeaderItem, TelegramHeaderItem } from "./header_item";
+import { HeaderItem, TelegramHeaderItem, WebsiteItem } from "./header_item";
 import { LanguageContext } from "../context";
 
 
@@ -72,7 +72,7 @@ export const Header = () => {
         <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
         <TelegramHeaderItem text={contacts.telegram} />
         <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
-        <HeaderItem text={contacts.website} />
+        <WebsiteItem text={contacts.website} />
       </Row>
     </Content>
   )
