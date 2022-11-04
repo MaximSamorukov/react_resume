@@ -25,54 +25,67 @@ export const Header = () => {
   return (
     <Content>
       <Row
-        style={{
-          justifyContent: 'center',
-        }}
+        justify="center"
       >
-        <div
-          style={{
-            marginRight: 'auto',
-            marginLeft: 'auto',
-          }}
+        <Col
+          span={2}
         >
-          <button style={{
-            border: 'none',
-            backgroundColor: 'white'
-          }} onClick={toggleLang}>
-            <span style={{
-              color: language.language === 'en' ? 'red' : 'black',
-            }}>EN</span>
-            <span> | </span>
-            <span
-              style={{
-                color: language.language === 'ru' ? 'red' : 'black',
-              }}
-            >RU</span>
-          </button>
-        </div>
+          <div
+            style={{
+              marginRight: 'auto',
+              marginLeft: 'auto',
+            }}
+          >
+            <button style={{
+              border: 'none',
+              backgroundColor: 'white'
+            }} onClick={toggleLang}>
+              <span style={{
+                color: language.language === 'en' ? 'red' : 'black',
+              }}>EN</span>
+              <span> | </span>
+              <span
+                style={{
+                  color: language.language === 'ru' ? 'red' : 'black',
+                }}
+              >RU</span>
+            </button>
+          </div>
+        </Col>
       </Row>
       <Row
-        style={{
-          justifyContent: 'center',
-        }}
+        justify="center"
       >
         <HeaderItem text={`${name} ${surname}`} />
         <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
         <HeaderItem text ={profession} />
-
       </Row>
       <Row
         style={{
           justifyContent: 'center',
         }}
       >
-        <HeaderItem text={contacts.phone} />
-        <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
-        <HeaderItem text={contacts.email} />
-        <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
-        <TelegramHeaderItem text={contacts.telegram} />
-        <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
-        <WebsiteItem text={contacts.website} />
+        <Col>
+          <HeaderItem text={contacts.phone} />
+        </Col>
+        <Col>
+          <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
+        </Col>
+        <Col>
+          <HeaderItem text={contacts.email} />
+        </Col>
+        <Col>
+          <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
+        </Col>
+        <Col>
+          <TelegramHeaderItem text={contacts.telegram} />
+        </Col>
+        <Col>
+          <div style={{ width: 20, textAlign: 'center' }}><span>|</span></div>
+        </Col>
+        <Col>
+          <WebsiteItem text={contacts.website} />
+        </Col>
       </Row>
     </Content>
   )
