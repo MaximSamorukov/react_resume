@@ -8,10 +8,10 @@ const Courses = () => {
   const {
     language: { language },
   } = useContext(LanguageContext);
-  const courses = data[language].courses;
+  const courses = data[language]?.courses;
   return (
     <div className={c.courses_layout}>
-      {courses.map((course) => (
+      {courses?.map((course) => (
         <CourseItem className={c} course={course} />
       ))}
     </div>

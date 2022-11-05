@@ -28,4 +28,9 @@ const links_table_en = {
   repository: "Repository",
 };
 
-export { titles_en, titles_ru, links_table_en, links_table_ru };
+const languages = {
+  EN: "en",
+  RU: "ru",
+};
+
+export { titles_en, titles_ru, links_table_en, links_table_ru, languages };

@@ -63,7 +63,7 @@ const Projects = () => {
         marginLeft: 40,
       }}
     >
-      <Table dataSource={data[language].projects} columns={columns} />
+      <Table dataSource={data[language]?.projects} columns={columns} />
     </div>
   );
 };

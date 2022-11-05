@@ -9,8 +9,13 @@ import c from "./styles/index.module.scss";
 export const Header = () => {
   const context = useContext(LanguageContext);
   const { language, setLanguage } = context;
-  const { name, surname, lastname, contacts, profession } =
-    data[language.language];
+  const {
+    name = "",
+    surname = "",
+    lastname = "",
+    contacts = "",
+    profession = "",
+  } = data[language?.language || ""] || {};
   const toggleLang = () => {
     setLanguage((prev) => {
       if (prev.language === "en") return { language: "ru" };

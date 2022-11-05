@@ -7,16 +7,16 @@ import c from "./styles/profile.module.scss";
 
 const Profiles = () => {
   const {
-    language: { language },
+    language: { language = "" },
   } = useContext(LanguageContext);
   const profiles = ["linkedin", "github", "resume_en", "resume_ru"];
-  const filterProfile = (profile) => profiles.includes(profile.name);
+  const filterProfile = (profile) => profiles?.includes(profile?.name);
 
   return (
     <div className={c.profile_wrapper}>
-      {data[language].profiles
-        .filter(filterProfile)
-        .map(({ label, target, download, name, url }, index, arr) => {
+      {data[language]?.profiles
+        ?.filter(filterProfile)
+        ?.map(({ label, target, download, name, url }, index, arr) => {
           return (
             <div key={name} className={c.profile_item}>
               <a download={download} target={target} href={url}>

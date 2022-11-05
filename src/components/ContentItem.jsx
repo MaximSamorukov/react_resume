@@ -4,7 +4,7 @@ import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
 import { HeaderItem } from "./header_item";
-import { titles_en, titles_ru } from "../data/libraries";
+import { titles_en, titles_ru, languages } from "../data/libraries";
 
 export const ContentItem = ({ title, children, style = {} }) => {
   const {
@@ -13,7 +13,7 @@ export const ContentItem = ({ title, children, style = {} }) => {
   const [width] = usePageSize();
   const { Content } = Layout;
   const isPresent = width > 750;
-  const titles = language === "en" ? titles_en : titles_ru;
+  const titles = language === languages.EN ? titles_en : titles_ru;
   return (
     <div>
       <Content style={{ marginTop: 15 }}>
