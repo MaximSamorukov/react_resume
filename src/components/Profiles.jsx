@@ -18,14 +18,12 @@ const Profiles = () => {
         .filter(filterProfile)
         .map(({ label, target, download, name, url }, index, arr) => {
           return (
-              <div key={name} className={c.profile_item}>
-                <a download={download} target={target} href={url}>
-
-                    <div className={c.profile_icon}>{icons[name]}</div>
-                    <div className={c.profile_label}>{label}</div>
-
-                </a>
-              </div>
+            <div key={name} className={c.profile_item}>
+              <a download={download} target={target} href={url}>
+                <div className={c.profile_icon}>{icons[name]}</div>
+                <div className={c.profile_label}>{label}</div>
+              </a>
+            </div>
           );
         })}
     </div>
