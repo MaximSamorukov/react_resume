@@ -13,7 +13,7 @@ const Instruments = () => {
       }}
       className="ui bulleted list"
     >
-      {data[language].instruments.map(({ label }, index) => {
+      {data[language]?.instruments.map(({ label }, index) => {
         return (
           <div key={index} className="item">
             {label.reduceRight((acc, item) => {
