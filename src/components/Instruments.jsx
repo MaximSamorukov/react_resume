@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context";
-import { data } from '../data/data';
+import { data } from "../data/data";
 
 const Instruments = () => {
-  const { language: { language }} = useContext(LanguageContext);
+  const {
+    language: { language },
+  } = useContext(LanguageContext);
   return (
     <ul
       style={{
@@ -11,20 +13,17 @@ const Instruments = () => {
       }}
       className="ui bulleted list"
     >
-      {
-        data[language].instruments.map(({ label }, index) => {
-          return (
-            <div key={index} className="item">{label.reduceRight((acc, item) => {
+      {data[language].instruments.map(({ label }, index) => {
+        return (
+          <div key={index} className="item">
+            {label.reduceRight((acc, item) => {
               return `${item}, ${acc}`;
-            }, '')}
-            </div>
-          )
-        })
-      }
+            }, "")}
+          </div>
+        );
+      })}
     </ul>
-  )
-}
+  );
+};
 
-export {
-  Instruments,
-}
+export { Instruments };

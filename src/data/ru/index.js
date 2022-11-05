@@ -5,11 +5,4 @@ import { languages } from "./languages";
 import { profiles } from "./profiles";
 import { projects } from "./projects";
 
-export {
-  courses,
-  experience,
-  instruments,
-  languages,
-  profiles,
-  projects,
-}
+export { courses, experience, instruments, languages, profiles, projects };

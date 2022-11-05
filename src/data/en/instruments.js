@@ -1,17 +1,17 @@
 export const instruments = [
   {
-    label: ['JavaScript', 'React', 'Redux'],
+    label: ["JavaScript", "React", "Redux"],
   },
   {
-    label: ['HTML', 'CSS', 'Less', 'SC(A)SS'],
+    label: ["HTML", "CSS", "Less", "SC(A)SS"],
   },
   {
-    label: ['some experience in GraphQL and MongoDB'],
+    label: ["some experience in GraphQL and MongoDB"],
   },
   {
-    label: ['Git', 'Webpack', 'VSCode'],
+    label: ["Git", "Webpack", "VSCode"],
   },
   {
-    label: ['Figma', 'Avocode'],
+    label: ["Figma", "Avocode"],
   },
 ];
