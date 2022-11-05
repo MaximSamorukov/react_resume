@@ -18,12 +18,7 @@ export const courses = [
     name: "Node.js-разработчик",
     school: "Hexlet",
     type: "hexlet",
-    description: [
-      "Git",
-      "Node.js",
-      "Express.js",
-      "базы данных",
-    ],
+    description: ["Git", "Node.js", "Express.js", "базы данных"],
   },
   {
     name: "Фронтенд-разработчик",

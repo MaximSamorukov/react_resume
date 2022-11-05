@@ -1,17 +1,17 @@
 import {
-  LinkedinOutlined,
-  GithubOutlined,
-  FilePdfOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
+import { GithubIcon } from "./profiles/GithubIcon.jsx";
+import { LinkedinIcon } from './profiles/LinkedinIcon.jsx';
+import { PDFIcon } from './profiles/PDFicon';
 import Codewars from "./Codewars";
 
 const icons = {
   codewars: <Codewars />,
-  linkedin: <LinkedinOutlined />,
-  github: <GithubOutlined />,
-  resume_en: <FilePdfOutlined />,
-  resume_ru: <FilePdfOutlined />,
+  linkedin: <LinkedinIcon />,
+  github: <GithubIcon />,
+  resume_en: <PDFIcon />,
+  resume_ru: <PDFIcon />,
   hexlet: <ThunderboltOutlined />,
 };
 
