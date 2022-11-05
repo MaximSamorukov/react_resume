@@ -1,0 +1,35 @@
+@import "./variables";
+
+.courses_layout {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-left: -20px;
+
+   .course_item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      min-width: 20%;
+      width: 150px;
+      .course_item_type {
+         display: flex;
+         justify-content: center;
+         img {
+            width: 40px;
+            height: 40px;
+         }
+      }
+      .course_item_school {
+         align-self: center;
+         font-size: 10px;
+      }
+      .course_item_name {
+         font-size: 10px;
+         color: $orange;
+         align-self: center;
+      }
+   }
+}

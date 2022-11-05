@@ -1,44 +1,21 @@
 import React, { useContext } from "react";
-import { Table } from "antd";
 import { LanguageContext } from "../context";
-import { data } from '../data/data';
-
-const columns = [
-  {
-    title: 'Course',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: 'Description',
-    dataIndex: 'description',
-    key: 'description',
-    render: items => {
-      return items.map((item, index, arr) => (
-      <>
-        <span>{item}</span>
-        {(arr.length > index + 1) && <span> | </span>}
-      </>
-    ))}
-  }
-]
+import { data } from "../data/data";
+import CourseItem from "./CourseItem";
+import c from './styles/index.module.scss';
 
 const Courses = () => {
-  const { language: { language }} = useContext(LanguageContext);
+  const {
+    language: { language },
+  } = useContext(LanguageContext);
+  const courses = data[language].courses;
   return (
     <div
-      style={{
-        marginLeft: 40,
-      }}
+      className={c.courses_layout}
     >
-      <Table
-        dataSource={data[language].courses}
-        columns={columns}
-      />
+      {courses.map((course) => <CourseItem className={c} course={course} />)}
     </div>
-  )
-}
+  );
+};
 
-export {
-  Courses,
-}
+export { Courses };

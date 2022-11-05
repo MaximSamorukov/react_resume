@@ -1,6 +1,6 @@
 export const languages = [
   {
-    name: 'english',
-    description: 'intermediate',
+    name: "english",
+    description: "intermediate",
   },
 ];

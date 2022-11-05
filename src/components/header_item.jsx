@@ -1,30 +1,27 @@
 import React from "react";
 
+export const HeaderItem = ({ text, icon, className }) => {
+  return <div className={className}>{text}</div>;
+};
 
-export const HeaderItem = ({ text, icon }) => {
-  return (
-    <div>
-      { text }
-    </div>
-  )
-}
-
-const telegramLink = (text) => <a target="_blank" href={`https://t.me/${text}`}>{`@${text}`}</a>
+const telegramLink = (text) => (
+  <a
+    target="_blank"
+    href={`https://t.me/${text}`}
+    rel="noreferrer"
+  >{`@${text}`}</a>
+);
 
 export const TelegramHeaderItem = ({ text }) => {
-  return (
-    <div>
-      {telegramLink(text)}
-    </div>
-  )
-}
+  return <div>{telegramLink(text)}</div>;
+};
 
-const websiteLink = (text) => <a target="_blank" href={text}>website</a>
+const websiteLink = (text) => (
+  <a target="_blank" href={text} rel="noreferrer">
+    website
+  </a>
+);
 
 export const WebsiteItem = ({ text }) => {
-  return (
-    <div>
-      {websiteLink(text)}
-    </div>
-  )
-}
+  return <div>{websiteLink(text)}</div>;
+};
