@@ -1,6 +1,7 @@
 export const experience = [
   {
     company: "Mahuru",
+    active: false,
     title: "React developer",
     start: "01.08.2021",
     end: Date.now(),
@@ -15,6 +16,7 @@ export const experience = [
   },
   {
     company: "Mahuru",
+    active: false,
     title: "React developer, junior",
     start: "01.02.2021",
     end: "01.08.2021",
@@ -23,6 +25,22 @@ export const experience = [
       "working with libraries Ant Design, Leaflet",
       "working with Rest Api",
       "version control system Gitlab",
+    ],
+  },
+  {
+    company: "Mahuru",
+    active: true,
+    title: "React developer",
+    start: "01.02.2021",
+    end: Date.now(),
+    description: [
+      "developing web application  (SPA, React, TypeScript, SCSS);",
+      "developing processing data logic;",
+      "developing of custom components and updating existing components;",
+      "working with libraries Ant Design, Leaflet, moment.js;",
+      "developing of CRUD queries to connect frontend to the application backend;",
+      "version control system Gitlab;",
+      "documentation in Confluence, Yandex;",
     ],
   },
 ];

@@ -1,9 +1,9 @@
 export const instruments = [
   {
-    label: ["JavaScript", "React", "Redux"],
+    label: ["JavaScript", "TypeScript", "React", "Redux"],
   },
   {
-    label: ["HTML", "CSS", "Less", "SC(A)SS"],
+    label: ["HTML", "CSS", "Less", "SCSS"],
   },
   {
     label: ["опыт работы с GraphQL и MongoDB в собственных проектах"],

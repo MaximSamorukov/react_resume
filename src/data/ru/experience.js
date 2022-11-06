@@ -1,6 +1,7 @@
 export const experience = [
   {
     company: "Махуру",
+    active: false,
     title: "Разработчик интерфейсов",
     start: "01.08.2021",
     end: Date.now(),
@@ -15,6 +16,7 @@ export const experience = [
   },
   {
     company: "Махуру",
+    active: false,
     title: "Младший разработчик интерфейсов",
     start: "01.02.2021",
     end: "01.08.2021",
@@ -23,6 +25,22 @@ export const experience = [
       "Использование библиотек Ant Design, Leaflet",
       "Работа с Rest Api",
       "Система контроля версий Gitlab",
+    ],
+  },
+  {
+    company: "Махуру",
+    active: true,
+    title: "Разработчик интерфейсов",
+    start: "01.02.2021",
+    end: Date.now(),
+    description: [
+      "участие в проекте поддержки веб приложения (SPA, React, TypeScript, SCSS);",
+      "разработка логики обработки данных;",
+      "разработка кастомных и доработка существующих компонентов;",
+      "использование библиотек Ant Design, Leaflet, moment.js;",
+      "написание CRUD запросов взаимодействия интерфейсов с сервером;",
+      "система контроля версий Gitlab;",
+      "документация в Confluence, Yandex;",
     ],
   },
 ];
