@@ -4,7 +4,7 @@ const titles_ru = {
   experience: "Опыт работы",
   stack: "Стек технологий",
   projects: "Проекты",
-  profiles: "Профили",
+  profiles: "Профили & резюме",
 };
 
 const titles_en = {
@@ -13,7 +13,7 @@ const titles_en = {
   experience: "Experience",
   stack: "Technical skills",
   projects: "Projects",
-  profiles: "Profiles",
+  profiles: "Profiles & resume",
 };
 
 const links_table_ru = {

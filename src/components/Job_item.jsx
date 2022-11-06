@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context";
+import c from './styles/job_item.module.scss';
 
 export const JobItem = ({ item }) => {
   const {
@@ -9,29 +10,18 @@ export const JobItem = ({ item }) => {
   const nowDaysString = language === "en" ? "present time" : "н.в.";
   return (
     <div
-      className="content"
-      style={{
-        marginTop: 10,
-      }}
+      className={c.content}
     >
       <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "flex-start",
-        }}
+        className={c.company_wrapper}
       >
         <div
-          style={{
-            marginRight: 10,
-          }}
+          className={c.company_name}
         >
           <h4 className="ui header">{company}</h4>
         </div>
         <div
-          style={{
-            lineHeight: "18px",
-          }}
+          className={c.company_years_of_work}
         >
           <span>{start}</span>
           <span> - </span>
@@ -39,25 +29,18 @@ export const JobItem = ({ item }) => {
         </div>
       </div>
       <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "flex-start",
-        }}
+        className={c.job_title_wrapper}
       >
         <div
-          style={{
-            marginRight: 10,
-            marginTop: 8,
-          }}
+          className={c.job_title}
         >
           <span>{title}</span>
         </div>
       </div>
 
-      <div className="ui bulleted list">
+      <div className={`ui_ bulleted_ list_ ${c.bulleted_list}`}>
         {description.map((i, index) => (
-          <div key={index} className="item">
+          <div key={index} className={`_item ${c.list_item}`}>
             {i}
           </div>
         ))}
