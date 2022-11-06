@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context";
-import c from './styles/job_item.module.scss';
+import c from "./styles/job_item.module.scss";
 
 export const JobItem = ({ item }) => {
   const {
@@ -9,32 +9,15 @@ export const JobItem = ({ item }) => {
   const { company, title, start, end, description } = item;
   const nowDaysString = language === "en" ? "present time" : "н.в.";
   return (
-    <div
-      className={c.content}
-    >
-      <div
-        className={c.company_wrapper}
-      >
-        <div
-          className={c.company_name}
-        >
+    <div className={c.content}>
+      <div className={c.company_wrapper}>
+        <div className={c.company_name}>
           <h4 className="ui header">{company}</h4>
         </div>
-        <div
-          className={c.company_years_of_work}
-        >
+        <div className={c.company_years_of_work}>
           <span>{start}</span>
           <span> - </span>
           <span>{typeof end === "string" ? end : nowDaysString}</span>
-        </div>
-      </div>
-      <div
-        className={c.job_title_wrapper}
-      >
-        <div
-          className={c.job_title}
-        >
-          <span>{title}</span>
         </div>
       </div>
 
