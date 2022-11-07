@@ -1,6 +1,6 @@
 export const instruments = [
   {
-    label: ["JavaScript", "TypeScript", "React", "Redux"],
+    label: ["JavaScript", "TypeScript", "React", "Redux", "Next.js"],
   },
   {
     label: ["HTML", "CSS", "Less", "SCSS"],
