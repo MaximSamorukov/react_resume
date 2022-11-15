@@ -33,18 +33,4 @@
   font-family: "RobotoLight", serif !important;
 }
 
-.wrapper-outer {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.wrapper-inner {
-  border: 4px solid rgb(169, 157, 157);
-  border-radius: 30px;
-  max-width: 1000px;
-  width: auto;
-  margin-right: auto;
-  margin-left: auto;
-}

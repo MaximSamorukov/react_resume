@@ -1,0 +1,17 @@
+@import "./variables";
+
+.wrapper_outer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper_inner {
+  border: 4px solid rgb(169, 157, 157);
+  border-radius: 30px;
+  max-width: 1000px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

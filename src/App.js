@@ -37,7 +37,7 @@ function App() {
         <ContentItem title="education">
           <Courses />
         </ContentItem>
-        <ContentItem title="projects">
+        <ContentItem title="projects" style={{ minWidth: '100%' }}>
           <Projects />
         </ContentItem>
       </Layout>
