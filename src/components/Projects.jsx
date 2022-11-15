@@ -63,7 +63,6 @@ const Projects = () => {
   return (
     <>
       <div
-        ref={ref}
         className={s.projects_wrapper}
       >
         <Table dataSource={data[language]?.projects} columns={columns} />
