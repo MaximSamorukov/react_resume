@@ -20,7 +20,7 @@ export const ContentItem = ({ title, children, style = {} }) => {
         <Row>
           {isPresent && <Col span={4} />}
           <Col span={5}>
-            <div className="ui middle header">{titles[title]}</div>
+            <div style={{ width: 200, marginBottom: '5px' }} className="ui middle header">{titles[title]}</div>
           </Col>
           <Col span={8}>
             {/*<div style={{

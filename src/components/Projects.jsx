@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Table, Row } from "antd";
+import { useSize } from "ahooks";
 import { LanguageContext } from "../context";
 import { data } from "../data/data";
 import { links_table_en, links_table_ru } from "../data/libraries";
-
+import s from './styles/projects.module.scss';
 const Render = (_, { repositoryUrl, taskUrl, deployUrl }) => {
   const {
     language: { language },
@@ -56,15 +57,19 @@ const Projects = () => {
   const {
     language: { language },
   } = useContext(LanguageContext);
+  const ref = useRef(null);
+  const size = useSize(ref);
+
   return (
-    <div
-      style={{
-        width: "900px",
-        marginLeft: 40,
-      }}
-    >
-      <Table dataSource={data[language]?.projects} columns={columns} />
-    </div>
+    <>
+      <div
+        ref={ref}
+        className={s.projects_wrapper}
+      >
+        <Table dataSource={data[language]?.projects} columns={columns} />
+      </div>
+      <div ref={ref} className={s.in_development}>{`project styles for width ${size?.width}px in development`}</div>
+    </>
   );
 };
 

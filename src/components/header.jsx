@@ -32,6 +32,7 @@ export const Header = () => {
         <Col span={2}>
           <div
             style={{
+              width: '70px',
               marginRight: "auto",
               marginLeft: "auto",
             }}
