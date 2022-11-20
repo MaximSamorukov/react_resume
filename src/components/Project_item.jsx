@@ -17,7 +17,7 @@ const ProjectItem = ({
   const links = [
     { url: repositoryUrl, type: "github_project" },
     { url: deployUrl, type: "deploy" },
-  ];
+  ].filter((l) => Boolean(l.url));
   const onClick = () => setOpen((prev) => !prev);
   return (
     <div className={s.project_item_wrapper}>
