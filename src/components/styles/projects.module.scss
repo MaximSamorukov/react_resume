@@ -1,10 +1,12 @@
 @import "./variables";
 
 .projects_wrapper {
-  width: 900px;
-  margin-left: 40px;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  //border: 1px solid firebrick;
   @media (max-width: 600px) {
-    display: none;
+    //display: none;
   }
 }
 
@@ -12,7 +14,7 @@
   display: none;
   @media (max-width: 599px) {
     text-align: center;
-    display:block;
+    display: block;
     font-size: 10px;
   }
 }
