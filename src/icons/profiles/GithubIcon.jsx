@@ -1,5 +1,5 @@
 import react from "react";
-export const GithubIcon = ({ dimension = '32px'}) => (
+export const GithubIcon = ({ dimension = "32px" }) => (
   <svg
     width={dimension}
     height={dimension}

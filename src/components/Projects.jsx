@@ -19,7 +19,9 @@ const Projects = () => {
 
   return (
     <div ref={ref} className={s.projects_wrapper}>
-      {projects.map((item) => <ProjectItem key={item.title} state={state} {...item} />)}
+      {projects.map((item) => (
+        <ProjectItem key={item.title} state={state} {...item} />
+      ))}
     </div>
   );
 };

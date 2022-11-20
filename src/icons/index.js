@@ -3,7 +3,7 @@ import { GithubIcon } from "./profiles/GithubIcon.jsx";
 import { LinkedinIcon } from "./profiles/LinkedinIcon.jsx";
 import { PDFIcon } from "./profiles/PDFicon.jsx";
 import Codewars from "./Codewars";
-import { Deploy } from './Deploy';
+import { Deploy } from "./Deploy";
 
 const icons = {
   codewars: <Codewars />,
@@ -14,7 +14,7 @@ const icons = {
   resume_en: <PDFIcon />,
   resume_ru: <PDFIcon />,
   hexlet: <ThunderboltOutlined />,
-  open_btn: <DoubleLeftOutlined />
+  open_btn: <DoubleLeftOutlined />,
 };
 
 export { icons };
