@@ -1,0 +1,22 @@
+@import "./variables";
+
+.link {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding-right: 5px;
+
+  a {
+    align-self: flex-start;
+    box-sizing: border-box;
+    padding-top: 3px;
+
+    img {
+      vertical-align: top;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import s from './styles/wrapper.module.scss';
+import s from "./styles/wrapper.module.scss";
 
 const Wrapper = ({ children }) => {
   return (

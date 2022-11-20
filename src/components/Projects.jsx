@@ -4,54 +4,9 @@ import { useSize } from "ahooks";
 import { LanguageContext } from "../context";
 import { data } from "../data/data";
 import { links_table_en, links_table_ru } from "../data/libraries";
-import s from './styles/projects.module.scss';
-const Render = (_, { repositoryUrl, taskUrl, deployUrl }) => {
-  const {
-    language: { language },
-  } = useContext(LanguageContext);
-  const links = language === "en" ? links_table_en : links_table_ru;
-  return (
-    <>
-      {repositoryUrl && (
-        <Row>
-          <a href={repositoryUrl}>{links.repository}</a>
-        </Row>
-      )}
-      {taskUrl && (
-        <Row>
-          <a href={taskUrl}>{links.task}</a>
-        </Row>
-      )}
-      {deployUrl && (
-        <Row>
-          <a href={deployUrl}>{links.deploy}</a>
-        </Row>
-      )}
-    </>
-  );
-};
+import { ProjectItem } from "./Project_item";
 
-const columns = [
-  {
-    title: "Title",
-    dataIndex: "title",
-    key: "title",
-    width: "150px",
-  },
-  {
-    title: "Description, Stack",
-    dataIndex: "description",
-    key: "description",
-    width: "450px",
-  },
-  {
-    title: "Links",
-    dataIndex: "repositoryUrl",
-    key: "repositoryUrl",
-    render: Render,
-    width: "100px",
-  },
-];
+import s from "./styles/projects.module.scss";
 
 const Projects = () => {
   const {
@@ -59,16 +14,15 @@ const Projects = () => {
   } = useContext(LanguageContext);
   const ref = useRef(null);
   const size = useSize(ref);
+  const projects = data[language]?.projects;
+  const state = size?.width > 400;
 
   return (
-    <>
-      <div
-        className={s.projects_wrapper}
-      >
-        <Table dataSource={data[language]?.projects} columns={columns} />
-      </div>
-      <div ref={ref} className={s.in_development}>{`project styles for width ${size?.width}px in development`}</div>
-    </>
+    <div ref={ref} className={s.projects_wrapper}>
+      {projects.map((item) => (
+        <ProjectItem key={item.title} state={state} {...item} />
+      ))}
+    </div>
   );
 };
 

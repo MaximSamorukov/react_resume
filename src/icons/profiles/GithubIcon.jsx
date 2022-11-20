@@ -1,8 +1,8 @@
 import react from "react";
-export const GithubIcon = () => (
+export const GithubIcon = ({ dimension = "32px" }) => (
   <svg
-    width="32px"
-    height="32px"
+    width={dimension}
+    height={dimension}
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
   >
