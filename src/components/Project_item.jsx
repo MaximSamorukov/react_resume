@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "./Link";
+import { OpenBtn } from "./Open_btn";
 import s from "./styles/project_item.module.scss";
-import { icons } from "../icons";
 
 const ProjectItem = ({
   title,
@@ -31,12 +31,7 @@ const ProjectItem = ({
           </div>
         )}
         <div className={s.btn}>
-          <button
-            onClick={onClick}
-            className={`${s.btn_icon} ${open ? s.open : s.close}`}
-          >
-            {icons["open_btn"]}
-          </button>
+          <OpenBtn className={`${s.btn_icon} ${open ? s.open : s.close}`} onClick={onClick} type="open_btn" />
         </div>
       </div>
       {open && (

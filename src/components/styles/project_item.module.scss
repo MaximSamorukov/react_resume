@@ -20,33 +20,49 @@
     height: fit-content;
 
     .btn {
-      width: 5%;
-      height: 20px;
+      max-width: 5%;
+      height: 25px;
+      width: 25px;
       box-sizing: border-box;
-      padding-right: 30px;
-      padding-top: 2px;
-      position: relative;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       button {
-        position: absolute;
+        height: 25px;
+        width: 25px;
         border: none;
         background-color: transparent;
-        width: 20px;
-        height: 20px;
         -webkit-transition: -webkit-transform 0.4s ease-in-out;
         -ms-transition: -ms-transform 0.4s ease-in-out;
         transition: transform 0.4s ease-in-out;
+        box-sizing: border-box;
+        padding: 0;
+        position: relative;
+
+        svg {
+          position: absolute;
+          top: 4px;
+          left: 3px;
+          margin: 0;
+        }
       }
       .open {
         transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
         -webkit-transform: rotate(-90deg);
+        transform-origin: 45% 45%;
+        transform-box: border-box;
       }
 
       .close {
         transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
+        transform-origin: 45% 45%;
+        transform-box: border-box;
       }
     }
     .title {
