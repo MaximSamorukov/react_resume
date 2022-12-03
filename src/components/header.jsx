@@ -4,11 +4,13 @@ import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { HeaderItem, TelegramHeaderItem, WebsiteItem } from "./header_item";
 import { LanguageContext } from "../context";
+import { locales, languages } from '../data/libraries';
+
 import c from "./styles/index.module.scss";
 
 export const Header = () => {
   const context = useContext(LanguageContext);
-  const { language, setLanguage } = context;
+  const { language, setLanguage, locale, setLocale } = context;
   const {
     name = "",
     surname = "",
@@ -18,8 +20,12 @@ export const Header = () => {
   } = data[language?.language || ""] || {};
   const toggleLang = () => {
     setLanguage((prev) => {
-      if (prev.language === "en") return { language: "ru" };
-      return { language: "en" };
+      if (prev.language === languages.EN) return { language: languages.RU };
+      return { language: languages.EN };
+    });
+    setLocale((prev) => {
+      if (prev === locales.en) return locales.ru;
+      return locales.en;
     });
   };
   const [width] = usePageSize();

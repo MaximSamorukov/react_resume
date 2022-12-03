@@ -5,32 +5,35 @@ import CourseItem from "./CourseItem";
 import c from "./styles/index.module.scss";
 import Cosmic from 'cosmicjs';
 
-
 const Courses = () => {
-  const [cor, setCourses] = useState([]);
+  const {
+    locale,
+    language: { language },
+  } = useContext(LanguageContext);
+  const [courses, setCourses] = useState([]);
   const api = Cosmic();
   const bucket = api.bucket({
     slug: process.env.REACT_APP_COSMIC_SLUG,
     read_key: process.env.REACT_APP_COSMIC_READ,
   });
   useEffect(() => {
-    bucket.objects
+    bucket?.objects
     .find({
       type: "courses",
+      locale,
     })
     .props("metadata")
     .then((data) => {
-      setCourses(data.objects?.map((i) => i?.metadata));
+      setCourses(data?.objects?.map((i) => i?.metadata));
     })
-  }, []);
-  console.log(cor);
-  const {
-    language: { language },
-  } = useContext(LanguageContext);
-  const courses = data[language]?.courses;
+    .catch(() => {
+      setCourses(data[language]?.courses);
+    })
+  }, [locale]);
+
   return (
     <div className={c.courses_layout}>
-      {courses?.map((course, index) => (
+      {courses.sort((a, b) => a.index - b.index)?.map((course, index) => (
         <CourseItem key={index} className={c} course={course} />
       ))}
     </div>
