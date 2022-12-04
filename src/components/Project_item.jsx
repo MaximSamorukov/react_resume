@@ -39,7 +39,7 @@ const ProjectItem = ({
           <div className={s.description_wrapper}>
             <div className={s.description}>{description}</div>
           </div>
-          <div className={s.links_wrapper}>
+          <div className={`${s.links_wrapper} ${s.links_wrapper_open}`}>
             {links.map((link) => (
               <Link key={link.url} url={link.url} type={link.type} />
             ))}
