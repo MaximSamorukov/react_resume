@@ -23,8 +23,12 @@ const Courses = () => {
       locale,
     })
     .props("metadata")
-    .then((data) => {
-      setCourses(data?.objects?.map((i) => i?.metadata));
+    .then((info) => {
+      if (!info) {
+        setCourses(data[language]?.courses);
+      } else  {
+        setCourses(info?.objects?.map((i) => i?.metadata));
+      }
     })
     .catch(() => {
       setCourses(data[language]?.courses);
