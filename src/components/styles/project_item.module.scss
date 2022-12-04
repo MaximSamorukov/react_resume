@@ -19,8 +19,12 @@
     padding-left: 5px;
     height: fit-content;
 
+    @media (max-width: 420px) {
+      justify-content: space-between;
+    }
+
     .btn {
-      max-width: 5%;
+      max-width: 8%;
       height: 25px;
       width: 25px;
       box-sizing: border-box;
@@ -98,6 +102,10 @@
 
     @media (max-width: 400px) {
       width: 25%;
+      &_open {
+        justify-content: flex-end;
+        width: 100%;
+      }
     }
   }
 }
