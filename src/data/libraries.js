@@ -33,4 +33,9 @@ const languages = {
   RU: "ru",
 };
 
-export { titles_en, titles_ru, links_table_en, links_table_ru, languages };
+const locales = {
+  en: "en-US",
+  ru: "ru-RU",
+}
+
+export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales };
