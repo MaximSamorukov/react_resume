@@ -4,5 +4,6 @@ import { instruments } from "./instruments";
 import { languages } from "./languages";
 import { profiles } from "./profiles";
 import { projects } from "./projects";
+import { bio } from "./bio";
 
-export { courses, experience, instruments, languages, profiles, projects };
+export { courses, experience, instruments, languages, profiles, projects, bio };

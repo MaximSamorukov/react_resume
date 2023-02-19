@@ -43,4 +43,15 @@ export const experience = [
       "документация в Confluence, Yandex;",
     ],
   },
+  {
+    company: "Галс индустрия",
+    active: true,
+    title: "веб разработчик",
+    start: "01.07.2019",
+    end: "01.02.2021",
+    description: [
+      "поддержка интернет магазина (JS, React, Redux, SCSS, node.js);",
+      "взаимодействие с сторонними Rest Api сервисами;",
+    ],
+  },
 ];

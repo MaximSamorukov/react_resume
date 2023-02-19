@@ -69,7 +69,7 @@ export const Header = () => {
           </div>
         </Col>
       </Row>
-      <Row justify="center">
+      {/*<Row justify="center">
         <HeaderItem text={`${name} ${surname}`} />
         <div style={{ width: 20, textAlign: "center" }}>
           <span>|</span>
@@ -108,7 +108,7 @@ export const Header = () => {
         <Col>
           <WebsiteItem text={contacts.website} />
         </Col>
-      </Row>
+      </Row>*/}
     </Content>
   );
 };

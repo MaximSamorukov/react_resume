@@ -7,8 +7,8 @@ export const HeaderItem = ({ text, icon, className }) => {
 const telegramLink = (text) => (
   <a
     target="_blank"
-    href={`https://t.me/${text}`}
     rel="noreferrer"
+    href={`https://t.me/${text}`}
   >{`@${text}`}</a>
 );
 

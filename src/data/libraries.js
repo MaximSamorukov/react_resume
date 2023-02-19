@@ -1,5 +1,6 @@
 const titles_ru = {
   about: "Обо мне",
+  bio: "Био",
   education: "Обучение",
   experience: "Опыт работы",
   stack: "Стек технологий",
@@ -9,6 +10,7 @@ const titles_ru = {
 
 const titles_en = {
   about: "About",
+  bio: "Bio",
   education: "Education",
   experience: "Experience",
   stack: "Technical skills",
