@@ -43,4 +43,15 @@ export const experience = [
       "documentation in Confluence, Yandex;",
     ],
   },
+  {
+    company: "Gals industry",
+    active: true,
+    title: "web developer",
+    start: "01.07.2019",
+    end: "01.02.2021",
+    description: [
+      "maintain web store of special work clothes  (JS, React, Redux, SCSS, node.js);",
+      "interaction with side Rest Api services;",
+    ],
+  },
 ];

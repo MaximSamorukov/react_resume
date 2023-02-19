@@ -4,6 +4,9 @@ import { LinkedinIcon } from "./profiles/LinkedinIcon.jsx";
 import { PDFIcon } from "./profiles/PDFicon.jsx";
 import Codewars from "./Codewars";
 import { Deploy } from "./Deploy";
+import { WhatsappIcon } from './profiles/WhatsappIcon.jsx';
+import { TelegramIcon } from './profiles/TelegramIcon.jsx';
+import { EmailIcon } from "./profiles/EmailIcon.jsx";
 
 const icons = {
   codewars: <Codewars />,
@@ -15,6 +18,9 @@ const icons = {
   resume_ru: <PDFIcon />,
   hexlet: <ThunderboltOutlined />,
   open_btn: <DoubleLeftOutlined />,
+  whatsapp: <WhatsappIcon />,
+  telegram: <TelegramIcon />,
+  email: <EmailIcon />,
 };
 
 export { icons };

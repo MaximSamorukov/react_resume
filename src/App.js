@@ -8,6 +8,8 @@ import { WorkExperience } from "./components/WorkExperiemce";
 import { Profiles } from "./components/Profiles.jsx";
 import { Courses } from "./components/Courses.jsx";
 import { Projects } from "./components/Projects.jsx";
+import { Bio } from "./components/Bio.jsx";
+
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
         }}
       >
         <Header />
+        <ContentItem>
+          <Bio />
+        </ContentItem>
         <ContentItem
           style={{
             marginRight: "auto",
@@ -37,9 +42,9 @@ function App() {
         <ContentItem title="education">
           <Courses />
         </ContentItem>
-        <ContentItem title="projects" style={{ minWidth: "100%" }}>
+        {/*<ContentItem title="projects" style={{ minWidth: "100%" }}>
           <Projects />
-        </ContentItem>
+        </ContentItem>*/}
       </Layout>
     </Wrapper>
   );

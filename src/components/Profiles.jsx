@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import Cosmic from 'cosmicjs';
 import { LanguageContext } from "../context";
-import { Space } from "antd";
 import { data } from "../data/data";
 import { icons } from "../icons";
 import c from "./styles/profile.module.scss";

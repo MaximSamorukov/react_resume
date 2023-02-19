@@ -1,0 +1,23 @@
+@import "./variables";
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 5px;
+
+  .bio_item {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-bottom: 5px;
+
+    & div:first-child {
+      margin-right: 5px;
+      font-weight: bold;
+      width: 80px;
+    }
+
+
+  }
+}

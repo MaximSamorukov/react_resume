@@ -1,0 +1,37 @@
+@import "./variables";
+
+.contacts {
+  width: 100%;
+
+  .item {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    min-width: 100%;
+    padding-left: 0;
+    margin-bottom: 5px;
+
+    .firstCol {
+      width: 30px;
+      max-width: 30px;
+    }
+    & div {
+      font-weight: normal;
+    }
+  }
+  .socials {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .socialItem {
+      max-width: 40px;
+    }
+  }
+}
+
+.imgPadding {
+  padding-left: 2px !important;
+}
