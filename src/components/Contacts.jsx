@@ -48,7 +48,7 @@ const Contacts = ({ contacts }) => {
           if (contact.name === 'whatsapp') {
             return (
               <div className={c.socialItem}>
-                <div><a href={contact.link}>{icons[contact.name]}</a></div>
+                <div><a target="_blank" rel="noreferrer" href={contact.link}>{icons[contact.name]}</a></div>
               </div>
             )
           }
