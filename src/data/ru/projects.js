@@ -26,22 +26,30 @@ export const projects = [
     deployUrl: "https://react-resume-sandy.vercel.app/",
   },
   {
-    title: "Covid dashbord.",
+    title: "Todo приложение с расширенным функционалом",
     description:
-      "Обработка и представление данных представляемых api.covid19api.com. HTML, CSS, JS",
-    repositoryUrl: "https://github.com/MaximSamorukov/covid",
-    taskUrl:
-      "https://github.com/rolling-scopes-school/tasks/blob/master/tasks/covid-dashboard.md",
-    deployUrl: "https://pedantic-bhabha-137b93.netlify.app/",
+      "Стек: React, Redux Toolkit, SCSS, Material UI, lodash, validatorjs. Развернут на Vercel.",
+    repositoryUrl: "https://github.com/MaximSamorukov/advanced_todo",
+    taskUrl: "",
+    deployUrl: "https://advanced-todo-iota.vercel.app/",
   },
-  {
-    title: "News Ycombinator (тестовое задание)",
-    description:
-      "Частичная реализация главной страницы сайта https://news.ycombinator.com/news. Тестовое задание на позицию фронтенд разработчик. HTML, CSS, JS, React",
-    repositoryUrl: "https://github.com/MaximSamorukov/avito-test",
-    taskUrl: "https://github.com/avito-tech/sx-frontend-trainee-assignment",
-    deployUrl: "https://determined-noether-6d7cb3.netlify.app/",
-  },
+  //{
+  //  title: "Covid dashbord.",
+  //  description:
+  //    "Обработка и представление данных представляемых api.covid19api.com. HTML, CSS, JS",
+  //  repositoryUrl: "https://github.com/MaximSamorukov/covid",
+  //  taskUrl:
+  //    "https://github.com/rolling-scopes-school/tasks/blob/master/tasks/covid-dashboard.md",
+  //  deployUrl: "https://pedantic-bhabha-137b93.netlify.app/",
+  //},
+  //{
+  //  title: "News Ycombinator (тестовое задание)",
+  //  description:
+  //    "Частичная реализация главной страницы сайта https://news.ycombinator.com/news. Тестовое задание на позицию фронтенд разработчик. HTML, CSS, JS, React",
+  //  repositoryUrl: "https://github.com/MaximSamorukov/avito-test",
+  //  taskUrl: "https://github.com/avito-tech/sx-frontend-trainee-assignment",
+  //  deployUrl: "https://determined-noether-6d7cb3.netlify.app/",
+  //},
   //{
   //  title: "Фильтр авиа билетов (тестовое задание)",
   //  description: "HTML, CSS, JS, React",
@@ -50,32 +58,32 @@ export const projects = [
   //    "https://github.com/KosyanMedia/test-tasks/tree/master/aviasales_frontend",
   //  deployUrl: "https://fervent-fermi-869fdb.netlify.app/",
   //},
-  {
-    title: "Virtual Keyboard",
-    description:
-      "Виртуальная экранная клавиатура с опцией звукового оформления и возможностью распознования голоса",
-    repositoryUrl: "https://github.com/MaximSamorukov/data-test/tree/virtual",
-    taskUrl: "",
-    deployUrl: "https://maximsamorukov.github.io/data-test/virtual-keyboard",
-  },
-  {
-    title: "Пятнашки",
-    description:
-      "Игра с возможностью выбора размерности поля и сохранения лучших результатов",
-    repositoryUrl:
-      "https://github.com/MaximSamorukov/data-test/tree/gem-puzzle",
-    taskUrl: "",
-    deployUrl:
-      "https://maximsamorukov.github.io/data-test/gem-puzzle/gem-puzzle/dist/",
-  },
-  {
-    title: "Charts",
-    description:
-      "Работа с api для получения финансовых новостей и котировок акций. JS, Bootstrap, React, Redux",
-    repositoryUrl: "https://github.com/MaximSamorukov/charts/tree/charts-dev",
-    taskUrl: "",
-    deployUrl: "https://goofy-curie-94191e.netlify.app/",
-  },
+  //{
+  //  title: "Virtual Keyboard",
+  //  description:
+  //    "Виртуальная экранная клавиатура с опцией звукового оформления и возможностью распознования голоса",
+  //  repositoryUrl: "https://github.com/MaximSamorukov/data-test/tree/virtual",
+  //  taskUrl: "",
+  //  deployUrl: "https://maximsamorukov.github.io/data-test/virtual-keyboard",
+  //},
+  //{
+  //  title: "Пятнашки",
+  //  description:
+  //    "Игра с возможностью выбора размерности поля и сохранения лучших результатов",
+  //  repositoryUrl:
+  //    "https://github.com/MaximSamorukov/data-test/tree/gem-puzzle",
+  //  taskUrl: "",
+  //  deployUrl:
+  //    "https://maximsamorukov.github.io/data-test/gem-puzzle/gem-puzzle/dist/",
+  //},
+  //{
+  //  title: "Charts",
+  //  description:
+  //    "Работа с api для получения финансовых новостей и котировок акций. JS, Bootstrap, React, Redux",
+  //  repositoryUrl: "https://github.com/MaximSamorukov/charts/tree/charts-dev",
+  //  taskUrl: "",
+  //  deployUrl: "https://goofy-curie-94191e.netlify.app/",
+  //},
   //{
   //  title: "Страница для управления ссылками",
   //  description: "HTML, CSS, Less, JS",
@@ -98,23 +106,23 @@ export const projects = [
   //  taskUrl: "",
   //  deployUrl: "https://maximsamorukov.github.io/globex-it/index.html",
   //},
-  {
-    title: "English for kids",
-    description: "Детское приложение для изучения английских слов",
-    repositoryUrl:
-      "https://github.com/MaximSamorukov/data-test/tree/english-for-kids",
-    taskUrl: "",
-    deployUrl:
-      "https://rolling-scopes-school.github.io/maximsamorukov-JS2020Q3/english-for-kids/dist/",
-  },
-  {
-    title: "Calculator",
-    description: "Стандартный калькулятор с дополнительными функциями",
-    repositoryUrl:
-      "https://github.com/MaximSamorukov/data-test/tree/calculator",
-    taskUrl: "",
-    deployUrl: "https://maximsamorukov.github.io/data/calculator/",
-  },
+  //{
+  //  title: "English for kids",
+  //  description: "Детское приложение для изучения английских слов",
+  //  repositoryUrl:
+  //    "https://github.com/MaximSamorukov/data-test/tree/english-for-kids",
+  //  taskUrl: "",
+  //  deployUrl:
+  //    "https://rolling-scopes-school.github.io/maximsamorukov-JS2020Q3/english-for-kids/dist/",
+  //},
+  //{
+  //  title: "Calculator",
+  //  description: "Стандартный калькулятор с дополнительными функциями",
+  //  repositoryUrl:
+  //    "https://github.com/MaximSamorukov/data-test/tree/calculator",
+  //  taskUrl: "",
+  //  deployUrl: "https://maximsamorukov.github.io/data/calculator/",
+  //},
   //{
   //  title: "Express Rest Service",
   //  description:
@@ -131,14 +139,14 @@ export const projects = [
   //  taskUrl: "",
   //  deployUrl: "",
   //},
-  {
-    title: "Momentum",
-    description:
-      "Приложение, показывающее погоду в городе по запросу, цитаты известных людей, текущее время, имя пользователя и его цель на текущий день. Фоновое изображение меняется в зависимости от времени суток. Для хранения данных приложение использует локальное хранилище - local storage. Представляемая информация запрашивается из доступных API",
-    repositoryUrl: "https://github.com/MaximSamorukov/data-test/tree/momentum",
-    taskUrl: "",
-    deployUrl: "https://maximsamorukov.github.io/data-test/momentum",
-  },
+  //{
+  //  title: "Momentum",
+  //  description:
+  //    "Приложение, показывающее погоду в городе по запросу, цитаты известных людей, текущее время, имя пользователя и его цель на текущий день. Фоновое изображение меняется в зависимости от времени суток. Для хранения данных приложение использует локальное хранилище - local storage. Представляемая информация запрашивается из доступных API",
+  //  repositoryUrl: "https://github.com/MaximSamorukov/data-test/tree/momentum",
+  //  taskUrl: "",
+  //  deployUrl: "https://maximsamorukov.github.io/data-test/momentum",
+  //},
   //{
   //  title: "Expression-calculator",
   //  description:

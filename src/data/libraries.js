@@ -4,7 +4,7 @@ const titles_ru = {
   education: "Обучение",
   experience: "Опыт работы",
   stack: "Стек технологий",
-  projects: "Проекты",
+  projects: "Примеры моего кода",
   profiles: "Профили & резюме",
 };
 
@@ -14,7 +14,7 @@ const titles_en = {
   education: "Education",
   experience: "Experience",
   stack: "Technical skills",
-  projects: "Projects",
+  projects: "My code examples",
   profiles: "Profiles & resume",
 };
 
