@@ -45,7 +45,7 @@ export const experience = [
   },
   {
     company: "Gals industry",
-    active: true,
+    active: false,
     title: "web developer",
     start: "01.07.2019",
     end: "01.02.2021",
