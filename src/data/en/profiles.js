@@ -2,7 +2,7 @@ export const profiles = [
   {
     target: "_blank",
     download: false,
-    url: "https://github.com/MaximSamorukov/react_resume",
+    url: "https://github.com/MaximSamorukov",
     label: "Github",
     name: "github",
   },
