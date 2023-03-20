@@ -8,7 +8,7 @@ export const WorkExperience = (props) => {
   } = useContext(LanguageContext);
   return (
     <ul className="ui list">
-      {data[language]?.experience
+      {data[language]?.job
         .filter((i) => i.active)
         .map((item, index) => {
           return <JobItem key={index} item={item} />;

@@ -6,6 +6,7 @@ import {
   profiles,
   projects,
   bio,
+  job,
 } from "./en/index";
 
 export const en = {
@@ -28,4 +29,5 @@ export const en = {
   courses,
   projects,
   bio,
+  job,
 };

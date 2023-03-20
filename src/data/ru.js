@@ -6,6 +6,7 @@ import {
   profiles,
   projects,
   bio,
+  job,
 } from "./ru/index";
 export const ru = {
   name: "Максим",
@@ -27,4 +28,5 @@ export const ru = {
   courses,
   projects,
   bio,
+  job,
 };
