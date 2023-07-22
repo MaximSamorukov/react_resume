@@ -31,7 +31,7 @@ export const job = [
     company: "Mahuru",
     active: true,
     title: "React developer",
-    start: "01.02.2020",
+    start: "01.02.2021",
     end: Date.now(),
     description: [
       "developing web application  (SPA, React, TypeScript, SCSS);",

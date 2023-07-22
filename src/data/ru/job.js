@@ -31,7 +31,7 @@ export const job = [
     company: "Махуру",
     active: true,
     title: "Разработчик интерфейсов",
-    start: "01.02.2020",
+    start: "01.02.2021",
     end: Date.now(),
     description: [
       "участие в проекте поддержки веб приложения (SPA, React, TypeScript, SCSS);",

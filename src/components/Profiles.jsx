@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import Cosmic from 'cosmicjs';
+import Cosmic from "cosmicjs";
 import { LanguageContext } from "../context";
 import { data } from "../data/data";
 import { icons } from "../icons";
@@ -20,21 +20,21 @@ const Profiles = () => {
   });
   useEffect(() => {
     bucket?.objects
-    .find({
-      type: "profiles",
-      'metadata.locale': locale,
-    })
-    .props("metadata")
-    .then((info) => {
-      if (!info) {
+      .find({
+        type: "profiles",
+        "metadata.locale": locale,
+      })
+      .props("metadata")
+      .then((info) => {
+        if (!info) {
+          setProfiles(data[language]?.profiles);
+        } else {
+          setProfiles(info?.objects?.map((i) => i?.metadata));
+        }
+      })
+      .catch(() => {
         setProfiles(data[language]?.profiles);
-      } else {
-        setProfiles(info?.objects?.map((i) => i?.metadata));
-      }
-    })
-    .catch(() => {
-      setProfiles(data[language]?.profiles);
-    })
+      });
   }, [locale]);
 
   return (
