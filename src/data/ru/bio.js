@@ -21,11 +21,13 @@ export const bio = {
         phone: [
           {
             country: 'GE',
-            phone: '+995-591-992-362'
+            phone: '+995-591-992-362',
+            active: false,
           },
           {
             country: 'RU',
             phone: "8-925-026-17-37",
+            active: true,
           },
         ],
       },

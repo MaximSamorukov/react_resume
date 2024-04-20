@@ -30,14 +30,14 @@ export const profiles = [
   {
     target: "_blank",
     download: true,
-    url: "https://maximsamorukov.github.io/RESUME/Samorukov_Maksim_frontend_resume-en.pdf",
+    url: "https://maximsamorukov.github.io/RESUME/Maksim_Samorukov_en.pdf",
     label: "Resume.pdf, en",
     name: "resume_en",
   },
   {
     target: "_blank",
     download: true,
-    url: "https://maximsamorukov.github.io/RESUME/Samorukov_Maksim_frontend_resume.pdf",
+    url: "https://maximsamorukov.github.io/RESUME/Maksim_Samorukov_ru.pdf",
     label: "Резюме.pdf, рус.",
     name: "resume_ru",
   },

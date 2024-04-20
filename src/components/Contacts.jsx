@@ -17,7 +17,7 @@ const Contacts = ({ contacts }) => {
         if (contact.name === 'phone') {
           return (
             <>
-              {contact.phone.map((ph, index) => (
+              {contact.phone.filter((i => i.active)).map((ph, index) => (
                 <div className={c.item}>
                   <div className={c.firstCol}><img src={flags[ph.country]} alt={`flag_${index}`} /></div>
                   <div>{ph.phone}</div>
