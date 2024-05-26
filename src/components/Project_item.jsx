@@ -16,7 +16,7 @@ const ProjectItem = ({
   const ref = useRef(null);
   const width = ref.current?.clientWidth;
   const less500 = width <= 500;
-  console.log(width);
+
   useEffect(() => {
     if (less500) {
       setOpen(() => true);
@@ -41,8 +41,8 @@ const ProjectItem = ({
         )}
       </div>
       <div className={cn(s.controls, open ? s.controls_open : s.controls_close)}>
-        <div className={cn(s.btn, open ? s.btn_open : s.btn_close)}>
-          <OpenBtn className={`${s.btn_icon} ${open ? s.btn_icon_open : s.btn_icon_close}`} onClick={onClick} type="open_btn" />
+        <div className={cn(s.btn, {[s.btn_open]: open, [s.btn_close]: open })}>
+          <OpenBtn className={cn(s.btn_icon, open ? s.btn_icon_open : s.btn_icon_close )} onClick={onClick} type="open_btn" />
         </div>
           {links.map((link, index) => (
             <Link style={getStyle(open, index, less500)} key={link.url} url={link.url} type={link.type} />
