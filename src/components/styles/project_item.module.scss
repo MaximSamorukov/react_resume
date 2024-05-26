@@ -1,20 +1,23 @@
 @import "./variables";
 
 .project_item_wrapper {
+  border-radius: 10px;
   width: 100%;
   margin-left: 0px;
   margin-right: 0px;
   -webkit-box-shadow: 2px 1px 8px -3px #454545;
   box-shadow: 2px 1px 8px -3px #454545;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   margin-bottom: 5px;
+  transition: height 4s ease-in-out;
 
   .title_wrapper {
+    min-width: 70%;
     display: flex;
     justify-content: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     box-sizing: border-box;
     padding-left: 5px;
     height: fit-content;
@@ -23,53 +26,6 @@
       justify-content: space-between;
     }
 
-    .btn {
-      max-width: 8%;
-      height: 25px;
-      width: 25px;
-      box-sizing: border-box;
-      padding: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-
-      button {
-        height: 25px;
-        width: 25px;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        -webkit-transition: -webkit-transform 0.4s ease-in-out;
-        -ms-transition: -ms-transform 0.4s ease-in-out;
-        transition: transform 0.4s ease-in-out;
-        box-sizing: border-box;
-        padding: 0;
-        position: relative;
-
-        svg {
-          position: absolute;
-          top: 4px;
-          left: 3px;
-          margin: 0;
-        }
-      }
-      .open {
-        transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -webkit-transform: rotate(-90deg);
-        transform-origin: 45% 45%;
-        transform-box: border-box;
-      }
-
-      .close {
-        transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform-origin: 45% 45%;
-        transform-box: border-box;
-      }
-    }
     .title {
       width: 90%;
       font-weight: bold;
@@ -94,19 +50,80 @@
     }
   }
 
-  .links_wrapper {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    height: 30px;
-    width: 100%;
+  .controls {
+    margin-top: 5px;
+    width: 20%;
+    min-width: 100px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 30px 35px 30px;
+    grid-template-rows: repeat(2, 1fr);
+    
+    &_close {
+      grid-template-rows: 100% 0px;
+    }
+    .btn {
+      height: fit-content;
+      width: fit-content;
+      box-sizing: border-box;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      grid-column: 4;
+      grid-row: 1;
+      justify-self: center;
+      
+      button {
+        width: fit-content;
+        height: fit-content;
+        height: 20px;
+        width: 20px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    @media (max-width: 400px) {
-      width: 25%;
-      &_open {
-        justify-content: flex-end;
-        width: 100%;
+        span {
+          display: block;
+          width: 13px;
+          height: 13px;
+        }
+      }
+
+      &_icon {
+          height: 20px;
+          width: 20px;
+          border: none;
+          outline: none;
+          background-color: transparent;
+           -webkit-transition: -webkit-transform 0.4s ease-in-out;
+           -ms-transition: -ms-transform 0.4s ease-in-out;
+           transition: transform 0.4s ease-in-out;
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+          border-radius: 50%;
+          transform-origin: 50% 50%;
+
+        &_open {
+          transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -webkit-transform: rotate(-90deg);
+          transform-box: border-box;
+        }
+        
+        &_close {
+          transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          transform-box: border-box;
+        }
       }
     }
+
   }
 }
+

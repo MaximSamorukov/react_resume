@@ -9,9 +9,10 @@
   align-items: flex-start;
   box-sizing: border-box;
   padding-right: 5px;
+  grid-row: 1;
+  justify-self: self-end;
 
   a {
-    align-self: flex-start;
     box-sizing: border-box;
     padding-top: 3px;
 
