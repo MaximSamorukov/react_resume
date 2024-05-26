@@ -28,13 +28,6 @@ export const ContentItem = ({ title, children, style = {} }) => {
             </div>
           </Col>
           <Col span={8}>
-            {/*<div style={{
-              backgroundColor: 'blue',
-              maxHeight: 2,
-              height: 2,
-              width: '100%',
-              marginTop: 13
-            }} />*/}
           </Col>
           {isPresent && <Col span={4} />}
         </Row>

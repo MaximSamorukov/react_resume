@@ -1,5 +1,6 @@
 export const courses = [
   {
+    valid: true,
     name: "Фронтенд-разработчик",
     school: "Hexlet",
     type: "hexlet",
@@ -15,18 +16,21 @@ export const courses = [
     ],
   },
   {
+    valid: false,
     name: "Node.js-разработчик",
     school: "Hexlet",
     type: "hexlet",
     description: ["Git", "Node.js", "Express.js", "базы данных"],
   },
   {
+    valid: true,
     name: "Фронтенд-разработчик",
     school: "HTML Academy",
     type: "academy",
     description: ["JavaScript", "CSS", "Less"],
   },
   {
+    valid: true,
     name: "Фронтенд-разработчик",
     school: "RSSchool",
     type: "rss",
@@ -36,6 +40,7 @@ export const courses = [
     ],
   },
   {
+    valid: false,
     name: "Node.js-разработчик",
     school: "RSSchool",
     type: "rss",

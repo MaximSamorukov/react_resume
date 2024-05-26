@@ -17,7 +17,6 @@ const CourseItem = ({ className, course }) => {
         <img src={logos[course.type]} alt={course.type} />
       </div>
       <div className={className.course_item_school}>{course.school}</div>
-      <div className={className.course_item_name}>{course.name}</div>
     </div>
   );
 };

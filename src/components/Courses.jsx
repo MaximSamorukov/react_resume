@@ -3,37 +3,15 @@ import { LanguageContext } from "../context";
 import { data } from "../data/data";
 import CourseItem from "./CourseItem";
 import c from "./styles/index.module.scss";
-import Cosmic from 'cosmicjs';
 
 const Courses = () => {
   const {
-    locale,
     language: { language },
   } = useContext(LanguageContext);
   const [courses, setCourses] = useState([]);
-  const api = Cosmic();
-  const bucket = api.bucket({
-    slug: process.env.REACT_APP_COSMIC_SLUG,
-    read_key: process.env.REACT_APP_COSMIC_READ,
-  });
   useEffect(() => {
-    bucket?.objects
-    .find({
-      type: "courses",
-      locale,
-    })
-    .props("metadata")
-    .then((info) => {
-      if (!info) {
-        setCourses(data[language]?.courses);
-      } else  {
-        setCourses(info?.objects?.map((i) => i?.metadata));
-      }
-    })
-    .catch(() => {
-      setCourses(data[language]?.courses);
-    })
-  }, [locale]);
+    setCourses(data[language]?.courses.filter((i) => i.valid));
+  }, [language]);
 
   return (
     <div className={c.courses_layout}>
