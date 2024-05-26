@@ -6,7 +6,7 @@ export const job = [
     start: "01.09.2023",
     end: Date.now(),
     description: [
-      "agile work flow, development process based on user stories;",
+      "scrum work flow, development process based on user stories;",
       "application, based on microservises, interface development;",
       "establish integation with backend based on Rest Api and ws, using Swagger, Postman;",
       "frontend stack: Electron, TypeScript, React, Redux, SCSS, Ant Design, moment.js, lodash;",

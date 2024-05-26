@@ -6,7 +6,7 @@ export const job = [
     start: "02.08.2023",
     end: Date.now(),
     description: [
-      "работа по agile, разработка в рамках пользовательских историй;",
+      "работа по scrum, разработка в рамках пользовательских историй;",
       "разработка интерфейса приложения на основе микросервисной архитектуры;",
       "интеграция интерфейсов с бекендом по Rest Api и ws, с использование Swagger, Postman;",
       "стек фронтенда Electron, TypeScript, React, Redux, SCSS, Ant Design, moment.js, lodash;",
