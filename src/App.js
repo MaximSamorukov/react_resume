@@ -39,7 +39,13 @@ function App() {
         <ContentItem title="experience">
           <WorkExperience />
         </ContentItem>
-        <ContentItem title="education">
+        <ContentItem
+          style={{
+            marginRight: "auto",
+            marginLeft: "auto",
+          }}
+          title="education"
+        >
           <Courses />
         </ContentItem>
         <ContentItem title="projects" style={{ minWidth: "100%" }}>
