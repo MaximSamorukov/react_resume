@@ -18,6 +18,7 @@ export const bio = {
     value: [
       {
         name: 'phone',
+        active: false,
         phone: [
           {
             country: 'GE',
@@ -27,7 +28,7 @@ export const bio = {
           {
             country: 'RU',
             phone: "8-925-026-17-37",
-            active: true,
+            active: false,
           },
         ],
       },

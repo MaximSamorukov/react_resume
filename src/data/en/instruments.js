@@ -1,30 +1,30 @@
 export const instruments = [
   {
-    label: ["JavaScript", "TypeScript", "React", "Redux", "Next.js"],
+    label: ["JavaScript", "TypeScript", "React", "Redux", "Flux"],
+    active: true,
+  },
+  {
+    label: ["HTML", "CSS", "Less", "SC(A)SS"],
+    active: true,
+  },
+  {
+    label: ["git", "Webpack"],
+    active: true,
+  },
+  {
+    label: ["Figma", "Avocode"],
     active: true,
   },
   {
     label: ["some experience in node.js, Express.js"],
-    active: true,
+    active: false,
   },
   {
     label: ["basic knowledge in PHP"],
     active: false,
   },
   {
-    label: ["HTML", "CSS", "Less", "SCSS"],
-    active: true,
-  },
-  {
     label: ["some experience in GraphQL, Apollo, MongoDB, Mongoose"],
-    active: true,
-  },
-  {
-    label: ["Git", "Github", "Gitlab", "Webpack", "VSCode"],
-    active: true,
-  },
-  {
-    label: ["Figma", "Avocode"],
-    active: true,
+    active: false,
   },
 ];

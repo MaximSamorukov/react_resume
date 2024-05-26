@@ -15,6 +15,7 @@ function App() {
   return (
     <Wrapper>
       <Layout
+        id="pdf"
         style={{
           margin: 10,
           backgroundColor: "white",

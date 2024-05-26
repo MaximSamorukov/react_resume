@@ -40,4 +40,9 @@ const locales = {
   ru: "ru-RU",
 }
 
-export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales };
+const copyLabel = {
+  en: "Email copied",
+  ru: "Электроонный адрес скопирован",
+}
+
+export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales, copyLabel };

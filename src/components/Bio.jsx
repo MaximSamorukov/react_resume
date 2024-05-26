@@ -11,15 +11,15 @@ const Bio = () => {
   return (
     <div className={c.bio}>
       <div className={c.bio_item}>
-        <div>{`${name.key}:`}</div>
+        <div className={c.key}>{`${name.key}:`}</div>
         <div>{`${name.name} ${name.surname}`}</div>
       </div>
       <div className={c.bio_item}>
-        <div>{`${profession.key}: `}</div>
+        <div className={c.key}>{`${profession.key}: `}</div>
         <div>{`${profession.value}`}</div>
       </div>
       <div className={c.bio_item}>
-        <div>{`${contacts.key}: `}</div>
+        <div className={c.key}>{`${contacts.key}: `}</div>
         <Contacts contacts={contacts?.value}/>
       </div>
     </div>
