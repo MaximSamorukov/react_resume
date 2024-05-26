@@ -10,6 +10,7 @@ export const LanguageContext = createContext();
 const useToggleLanguage = () => {
   const [language, setLanguage] = useState(defaultLanguage);
   const [locale, setLocale] = useState(defaultLocale);
+  const { href } = window.location;
   useEffect(() => {
     axios
       .get("https://ipapi.co/json/")
@@ -22,7 +23,16 @@ const useToggleLanguage = () => {
       })
       .catch((error) => {
         console.log(error);
-      });
+      }).finally(() => {
+        const url = new URL(href);
+        const params = url.searchParams;
+        const lang = params.get('lang');
+        if (lang) {
+          const language = lang === "ru" ? languages.RU : languages.EN;
+          setLanguage({ language });
+          setLocale(locales[language]);
+        }
+      })
   }, []);
   return {
     language,
