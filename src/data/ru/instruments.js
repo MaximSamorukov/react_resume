@@ -1,6 +1,6 @@
 export const instruments = [
   {
-    label: ["JavaScript", "TypeScript", "React", "Redux", "Flux"],
+    label: ["JavaScript", "TypeScript", "React", "Redux", "Flux", "jest"],
     active: true,
   },
   {
