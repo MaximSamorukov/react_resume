@@ -1,6 +1,6 @@
 export const job = [
   {
-    company: "Sphaera",
+    company: "Sphaera, Ltd",
     active: true,
     title: "React developer",
     start: "01.09.2023",
@@ -18,7 +18,7 @@ export const job = [
     ],
   },
   {
-    company: "Mahuru",
+    company: "Mahuru, LC",
     active: true,
     title: "React developer",
     start: "01.02.2021",

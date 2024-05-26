@@ -1,6 +1,6 @@
 export const job = [
   {
-    company: "Сфера",
+    company: "Сфера, АО",
     active: true,
     title: "Разработчик интерфейсов",
     start: "02.08.2023",
@@ -18,7 +18,7 @@ export const job = [
     ],
   },
   {
-    company: "Махуру",
+    company: "Махуру, ООО",
     active: true,
     title: "Разработчик интерфейсов",
     start: "01.02.2021",
