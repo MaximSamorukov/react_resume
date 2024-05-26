@@ -1,6 +1,6 @@
 export const bio = {
   name: {
-    key: 'Имя',
+    key: 'ФИО',
     name: "Максим",
     surname: "Саморуков",
     lastname: "Львович",
