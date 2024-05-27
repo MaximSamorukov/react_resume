@@ -49,3 +49,16 @@
     }
   }
 }
+
+.toggleLanguageBtn {
+  border: none;
+  background-color: $toggleLanguageBtnColor;
+}
+
+.en, .ru {
+  color: $toogleLanguagePassive;
+}
+
+.active {
+  color: $toggleLanguageActive
+}

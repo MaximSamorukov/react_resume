@@ -2,3 +2,30 @@ $green: rgb(54, 222, 54);
 $red: rgb(142, 64, 64);
 $yellow: rgb(228, 228, 83);
 $orange: rgb(154, 105, 13);
+$black: black;
+$white: white;
+$red: red;
+$active: $red;
+$passive: $black;
+
+
+$instrumentItemHoverColor: $white;
+$instrumentItemBackgroundColor: $orange;
+$instrumentItemBorderColor: $black;
+
+$projectShadowColor: #454545;
+$projectTitleColor: forestgreen;
+
+$innerWrapperBorderColor: rgb(169, 157, 157);
+
+$fontBlackThemeColor: $white;
+$fontWhiteThemeColor: $black;
+
+$toggleLanguageBtnColor: $white;
+$toggleLanguageActive: $active;
+$toogleLanguagePassive: $passive;
+
+:root {
+   --fontBlackThemeColor: #{$fontBlackThemeColor};
+   --fontWhiteThemeColor: #{$fontWhiteThemeColor};
+}

@@ -8,7 +8,7 @@
 }
 
 .wrapper_inner {
-  border: 4px solid rgb(169, 157, 157);
+  border: 4px solid $innerWrapperBorderColor;
   border-radius: 30px;
   max-width: 1000px;
   width: 100%;

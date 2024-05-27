@@ -5,8 +5,8 @@
   width: 100%;
   margin-left: 0px;
   margin-right: 0px;
-  -webkit-box-shadow: 2px 1px 8px -3px #454545;
-  box-shadow: 2px 1px 8px -3px #454545;
+  -webkit-box-shadow: 2px 1px 8px -3px $projectShadowColor;
+  box-shadow: 2px 1px 8px -3px $projectShadowColor;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -30,7 +30,7 @@
       width: 90%;
       font-weight: bold;
       font-style: italic;
-      color: forestgreen;
+      color: $projectTitleColor;
       width: 100%;
 
       @media (max-width: 400px) {

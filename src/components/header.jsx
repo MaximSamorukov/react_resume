@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { data } from "../data/data";
+import cn from "classnames";
 import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
@@ -31,6 +32,7 @@ export const Header = () => {
   const { Content } = Layout;
   const isPresent = width > 750;
   const contentSize = isPresent ? 12 : 16;
+  const langIsEn = language.language === "en";
   return (
     <Content>
       <Row justify="center">
@@ -43,24 +45,17 @@ export const Header = () => {
             }}
           >
             <button
-              style={{
-                border: "none",
-                backgroundColor: "white",
-              }}
+              className={c.toggleLanguageBtn}
               onClick={toggleLang}
             >
               <span
-                style={{
-                  color: language.language === "en" ? "red" : "black",
-                }}
+                className={cn(c.en, {[c.active]: langIsEn})}
               >
                 EN
               </span>
               <span> | </span>
               <span
-                style={{
-                  color: language.language === "ru" ? "red" : "black",
-                }}
+                className={cn(c.ru, {[c.active]: !langIsEn})}
               >
                 RU
               </span>
