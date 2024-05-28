@@ -50,9 +50,15 @@
   }
 }
 
+.toggler {
+  background-color: transparent;
+  width: 70px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .toggleLanguageBtn {
   border: none;
-  background-color: $toggleLanguageBtnColor;
+  background-color: transparent;
 }
 
 .en, .ru {

@@ -9,17 +9,14 @@ import { Profiles } from "./components/Profiles.jsx";
 import { Courses } from "./components/Courses.jsx";
 import { Projects } from "./components/Projects.jsx";
 import { Bio } from "./components/Bio.jsx";
-
+import s from './components/styles/app.module.scss';
 
 function App() {
   return (
     <Wrapper>
       <Layout
         id="pdf"
-        style={{
-          margin: 10,
-          backgroundColor: "white",
-        }}
+        className={s.layout}
       >
         <Header />
         <ContentItem>

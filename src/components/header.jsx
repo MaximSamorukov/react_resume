@@ -38,11 +38,7 @@ export const Header = () => {
       <Row justify="center">
         <Col span={2}>
           <div
-            style={{
-              width: "70px",
-              marginRight: "auto",
-              marginLeft: "auto",
-            }}
+            className={c.toggler}
           >
             <button
               className={c.toggleLanguageBtn}

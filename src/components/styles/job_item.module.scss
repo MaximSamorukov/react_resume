@@ -11,6 +11,10 @@
 
     .company_name {
       margin-right: 10px;
+
+      * {
+        color: inherit;
+      }
     }
 
     .company_years_of_work {

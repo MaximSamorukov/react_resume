@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { data } from "../data/data";
+import cn from "classnames";
 import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
 import { HeaderItem } from "./header_item";
 import { titles_en, titles_ru, languages } from "../data/libraries";
+import s from './styles/content_item.module.scss';
 
 export const ContentItem = ({ title, children, style = {} }) => {
   const {
@@ -16,13 +18,12 @@ export const ContentItem = ({ title, children, style = {} }) => {
   const titles = language === languages.EN ? titles_en : titles_ru;
   return (
     <div>
-      <Content style={{ marginTop: 15 }}>
+      <Content className={s.content}>
         <Row>
           {isPresent && <Col span={4} />}
           <Col span={5}>
             <div
-              style={{ width: 200, marginBottom: "5px" }}
-              className="ui middle header"
+              className={cn("ui middle header", s.itemHeader)}
             >
               {titles[title]}
             </div>
