@@ -1,5 +1,5 @@
 $green: rgb(54, 222, 54);
-$red: rgb(142, 64, 64);
+$blackRed: rgb(142, 64, 64);
 $yellow: rgb(228, 228, 83);
 $orange: rgb(154, 105, 13);
 $black: black;
@@ -24,6 +24,10 @@ $fontWhiteThemeColor: $black;
 $toggleLanguageBtnColor: $white;
 $toggleLanguageActive: $active;
 $toogleLanguagePassive: $passive;
+
+$profileItemColor: $black;
+$courseItemNameColor: $orange;
+$profileItemLabelColor: $orange;
 
 :root {
    --fontBlackThemeColor: #{$fontBlackThemeColor};
