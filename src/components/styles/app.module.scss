@@ -1,6 +1,9 @@
 @import "./variables";
 
 .layout {
-   margin: 10px;
+   box-sizing: border-box;
+   padding: 10px;
+   margin: 0px;
+   border-radius: 26px;
    background-color: $layoutBackgroundColorBlack;
 }
