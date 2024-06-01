@@ -20,7 +20,7 @@ export const projects = [
   {
     title: "Resume",
     description:
-      "This resume. Written in React with some elements from antd library, deployed in Vercel.",
+      "Резюме. Стек: React, React Context, SCSS, antd. Развернут на Vercel.",
     repositoryUrl: "https://github.com/MaximSamorukov/react_resume",
     taskUrl: "",
     deployUrl: "https://react-resume-sandy.vercel.app/",
