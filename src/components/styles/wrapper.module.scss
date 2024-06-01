@@ -6,14 +6,22 @@
   flex-direction: column;
   justify-content: center;
   background-color: $wrapperOuterBackgroundColorBlack;
+  position: relative;
 }
 
 .wrapper_inner {
-  background-color: $wrapperInnerBackgroundColorBlack;
-  border: 4px solid $innerWrapperBorderColor;
-  border-radius: 30px;
+  background-color: $wrapperOuterBackgroundColorBlack;
   max-width: 1000px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.canvas {
+  z-index: -100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
