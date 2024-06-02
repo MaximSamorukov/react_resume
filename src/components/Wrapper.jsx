@@ -1,10 +1,11 @@
 import React from "react";
 import s from "./styles/wrapper.module.scss";
+import { Animation } from "./animation/index.tsx";
 
 const Wrapper = ({ children }) => {
   return (
     <div className={s.wrapper_outer}>
-      <canvas className={s.canvas}></canvas>
+       <Animation />
       <div className={s.wrapper_inner}>{children}</div>
     </div>
   );
