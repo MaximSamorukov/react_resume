@@ -5,7 +5,7 @@ import { Animation } from "./animation/index.jsx";
 const Wrapper = ({ children }) => {
   return (
     <div className={s.wrapper_outer}>
-       <Animation />
+       <Animation argument={{}} />
       <div className={s.wrapper_inner}>{children}</div>
     </div>
   );

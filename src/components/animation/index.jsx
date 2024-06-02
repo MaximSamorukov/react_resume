@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { TextStyle, Application, ICanvas, Graphics, Container } from 'pixi.js'
 import { getCircles } from './helpers';
 
-   export const Animation = () => {
+   export const Animation = (argument) => {
       useEffect(() => {
          const root = document.getElementById('canvasContainer');
          const canvas = document.querySelector("canvas");
@@ -44,6 +44,6 @@ import { getCircles } from './helpers';
                canvas?.remove()
             }
 
-      }, []);
+      }, [argument]);
       return (<></>)
 }
