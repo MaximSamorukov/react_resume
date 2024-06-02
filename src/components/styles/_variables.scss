@@ -4,7 +4,7 @@ $yellow: rgb(228, 228, 83);
 $orange: rgb(154, 105, 13);
 $black: black;
 $white: white;
-$transparentBlack: rgba(29, 29, 33, 0.1);
+$transparentBlack: rgba(29, 29, 33, 0.65);
 $red: red;
 $active: $red;
 
@@ -40,8 +40,8 @@ $wrapperInnerBackgroundColorBlack: $transparentBlack;
 $toggleLanguageBtnColorWhite: $white;
 $toggleLanguageBtnColorBlack: $layoutBackgroundColorBlack;
 
-$wrapperOuterBackgroundColorWhite: rgba($white, 0.5);
-$wrapperOuterBackgroundColorBlack: rgba($black, 0.5);
+$wrapperOuterBackgroundColorWhite: rgba($white, 0.65);
+$wrapperOuterBackgroundColorBlack: rgba($black, 0.65);
 
 :root {
    --fontBlackThemeColor: #{$fontBlackThemeColor};

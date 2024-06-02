@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./styles/wrapper.module.scss";
-import { Animation } from "./animation/index.tsx";
+import { Animation } from "./animation/index.jsx";
 
 const Wrapper = ({ children }) => {
   return (
