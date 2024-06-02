@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect } from 'react';
-import { Stage, Text, createRoot } from '@pixi/react';
 import { TextStyle, Application, ICanvas, Graphics, Container } from 'pixi.js'
 import { getCircles } from './helpers';
 
@@ -23,7 +22,9 @@ import { getCircles } from './helpers';
                            .fill(i.color);
                      });
                   app.stage.addChild(...prCircles);
+                  console.log(app.stage.children)
                   //app.ticker.add((time) => {
+                     
                   //   // console.log(circle.position.y, clientHeight);
                   //   if (circle.position.x > (clientWidth || 0)) {
                   //      circle.position.x -= time.deltaTime;
