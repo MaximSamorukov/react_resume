@@ -1,6 +1,6 @@
 
 const rGBAToHexA = (rgb) => {
-   console.log(rgb)
+
    return rgb
       .map(number => number.toString(16))
       .map(string => string.length === 1 ? "0" + string : string)
@@ -18,9 +18,12 @@ export const getGeometries = (count, height, width) => {
       color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`
    }));
    let lines = [];
+   const map =  new Map();
    for (let i = 0; i < circles.length; i += 1) {
       for (let ii = 0; ii < circles.length; ii += 1) {
-         if (i === ii) continue
+         if (i === ii) continue;
+         if (map.has(`${i}${ii}`)) continue;
+
          const line = {
             fromX: circles[i].x,
             fromY: circles[i].y,
@@ -30,6 +33,8 @@ export const getGeometries = (count, height, width) => {
             color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`
          };
          lines.push(line);
+         map.set(`${i}${ii}`, `${ii}${i}`);
+         map.set(`${ii}${i}`, `${i}${ii}`);
       }
    }
    return [...circles, ...lines];

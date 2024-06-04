@@ -13,8 +13,7 @@ import { getGeometries } from './helpers';
                const app = new Application();
                app.init({ autoStart: true, width: clientWidth, height: clientHeight }).then(() => {
                   root?.appendChild(app.canvas);
-                  const geoms = getGeometries(3, clientHeight, clientWidth);
-                  console.log(geoms);
+                  const geoms = getGeometries(7, clientHeight, clientWidth);
                   const prGeoms = geoms
                      .map((i) => {
                         if (i.type === 'circle') {
@@ -23,20 +22,15 @@ import { getGeometries } from './helpers';
                               .fill(i.color);
                         }
                         if (i.type === 'line') {
-                           const line = new Graphics()
-                           .setStrokeStyle(10, i.color)
+                           return new Graphics()
                            .moveTo(i.fromX, i.fromY)
-                           .lineTo(i.toX, i.toY);
-                           line.zIndex = 1000;
-                           return line;
+                           .lineTo(i.toX, i.toY)
+                           .stroke({ width: 4, color: i.color});
                         }
                      });
-                  console.log(prGeoms);
                   app.stage.addChild(...prGeoms);
                   console.log(app.stage.children)
                   app.ticker.add((time) => {
-                     //console.log(time)
-                     // new Point().lineTo()
 
                   })
                })
