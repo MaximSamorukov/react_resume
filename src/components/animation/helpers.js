@@ -25,6 +25,8 @@ export const getGeometries = (count, height, width) => {
          if (map.has(`${i}${ii}`)) continue;
 
          const line = {
+            alpha: getRandom(360),
+            speed: getRandom(1),
             fromX: circles[i].x,
             fromY: circles[i].y,
             toX: circles[ii].x,
@@ -37,5 +39,5 @@ export const getGeometries = (count, height, width) => {
          map.set(`${ii}${i}`, `${i}${ii}`);
       }
    }
-   return [...circles, ...lines];
+   return [...circles];
 }

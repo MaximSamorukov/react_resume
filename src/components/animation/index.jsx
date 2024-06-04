@@ -13,7 +13,7 @@ import { getGeometries } from './helpers';
                const app = new Application();
                app.init({ autoStart: true, width: clientWidth, height: clientHeight }).then(() => {
                   root?.appendChild(app.canvas);
-                  const geoms = getGeometries(7, clientHeight, clientWidth);
+                  const geoms = getGeometries(30, clientHeight, clientWidth);
                   const prGeoms = geoms
                      .map((i) => {
                         if (i.type === 'circle') {
@@ -30,8 +30,21 @@ import { getGeometries } from './helpers';
                      });
                   app.stage.addChild(...prGeoms);
                   console.log(app.stage.children)
-                  app.ticker.add((time) => {
-
+                  app.ticker.add(({ deltaMS }) => {
+                     const angel = 0;
+                     const alpha = (2 * Math.PI) / (360 / angel);
+                     const sinAlpha = Math.sin(alpha);
+                     const cosAlpha = Math.cos(alpha);
+                     app.stage.children.forEach((i) => {
+                        const newPositionX = cosAlpha * deltaMS * 0.1;
+                        const newPositionY = sinAlpha * deltaMS * 0.1;
+                        const { x, y } = i.position;
+                        const { maxX } = app.stage.getBounds();
+                        console.log(app.stage.getBounds());
+                        i.position.x += newPositionX;
+                        i.position.y += newPositionY;
+                        return i;
+                     });
                   })
                })
 
