@@ -9,11 +9,28 @@ const rGBAToHexA = (rgb) => {
 
 const getRandom = (num) => Math.round(Math.random() * num);
 
-export const getCircles = (count, height, width) => {
-   return Array(count || 5).fill({}).map(() => ({
+export const getGeometries = (count, height, width) => {
+   const circles = Array(count || 5).fill({}).map(() => ({
+      type: 'circle',
       x: getRandom(width),
       y: getRandom(height),
       radius: 10 + getRandom(50),
       color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`
-   }))
+   }));
+   let lines = [];
+   for (let i = 0; i < circles.length; i += 1) {
+      for (let ii = 0; ii < circles.length; ii += 1) {
+         if (i === ii) continue
+         const line = {
+            fromX: circles[i].x,
+            fromY: circles[i].y,
+            toX: circles[ii].x,
+            toY: circles[ii].y,
+            type: 'line',
+            color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`
+         };
+         lines.push(line);
+      }
+   }
+   return [...circles, ...lines];
 }

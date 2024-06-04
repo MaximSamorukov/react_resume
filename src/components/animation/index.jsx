@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import { TextStyle, Application, ICanvas, Graphics, Container } from 'pixi.js'
-import { getCircles } from './helpers';
+import { TextStyle, Application, ICanvas, Graphics, Container, Point } from 'pixi.js'
+import { getGeometries } from './helpers';
 
    export const Animation = (argument) => {
       useEffect(() => {
@@ -13,30 +13,32 @@ import { getCircles } from './helpers';
                const app = new Application();
                app.init({ autoStart: true, width: clientWidth, height: clientHeight }).then(() => {
                   root?.appendChild(app.canvas);
-                  const circles = getCircles(40, clientHeight, clientWidth);
-                  console.log(circles)
-                  const prCircles = circles
+                  const geoms = getGeometries(3, clientHeight, clientWidth);
+                  console.log(geoms);
+                  const prGeoms = geoms
                      .map((i) => {
-                        return new Graphics()
-                           .circle(i.x, i.y, i.radius)
-                           .fill(i.color);
+                        if (i.type === 'circle') {
+                           return new Graphics()
+                              .circle(i.x, i.y, i.radius)
+                              .fill(i.color);
+                        }
+                        if (i.type === 'line') {
+                           const line = new Graphics()
+                           .setStrokeStyle(10, i.color)
+                           .moveTo(i.fromX, i.fromY)
+                           .lineTo(i.toX, i.toY);
+                           line.zIndex = 1000;
+                           return line;
+                        }
                      });
-                  app.stage.addChild(...prCircles);
+                  console.log(prGeoms);
+                  app.stage.addChild(...prGeoms);
                   console.log(app.stage.children)
-                  //app.ticker.add((time) => {
-                     
-                  //   // console.log(circle.position.y, clientHeight);
-                  //   if (circle.position.x > (clientWidth || 0)) {
-                  //      circle.position.x -= time.deltaTime;
-                  //   } else {
-                  //      circle.position.x += time.deltaTime;
-                  //   }
-                  //   if (circle.position.y > (clientHeight || 0)) {
-                  //      circle.position.y -= time.deltaTime;
-                  //   } else {
-                  //      circle.position.y += time.deltaTime;
-                  //   }
-                  //})
+                  app.ticker.add((time) => {
+                     //console.log(time)
+                     // new Point().lineTo()
+
+                  })
                })
 
             }
