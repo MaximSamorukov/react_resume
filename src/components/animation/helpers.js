@@ -45,3 +45,10 @@ export const getGeometries = (count, height, width) => {
    }
    return [...circles];
 }
+
+export const getNextAngel = (angel) => {
+   if (angel > 90) {
+      return angel + 90;
+   }
+   return angel - 90;
+}
