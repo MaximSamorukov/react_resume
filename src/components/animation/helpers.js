@@ -1,4 +1,3 @@
-
 const rGBAToHexA = (rgb) => {
 
    return rgb
@@ -10,13 +9,18 @@ const rGBAToHexA = (rgb) => {
 const getRandom = (num) => Math.round(Math.random() * num);
 
 export const getGeometries = (count, height, width) => {
-   const circles = Array(count || 5).fill({}).map(() => ({
-      type: 'circle',
-      x: getRandom(width),
-      y: getRandom(height),
-      radius: 10 + getRandom(50),
-      color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`
-   }));
+   const circles = Array(count || 5).fill({}).map(() => {
+      const circle = {
+         type: 'circle',
+         x: getRandom(width),
+         y: getRandom(height),
+         alpha: getRandom(360),
+         radius: 10 + getRandom(50),
+         color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`,
+      };
+      return circle;
+   });
+
    let lines = [];
    const map =  new Map();
    for (let i = 0; i < circles.length; i += 1) {
