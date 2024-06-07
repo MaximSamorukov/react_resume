@@ -46,7 +46,67 @@ export const getGeometries = (count, height, width) => {
    return [...circles];
 }
 
-export const getNextAngel = (angel) => {
+export const getNextAngel = (angel, side) => {
+   const rightAngel = 90;
+   if (side === 'right') {
+      if (angel === 0 || angel === 360) {
+         return 179;
+      }
+      if (angel >= 270) {
+         const firstAngel = 360 - angel;
+         const secondAngel = 90 + (rightAngel + firstAngel);
+         return secondAngel;
+      }
+      if (angel <= 90) {
+         const secondAngel = 270 - (rightAngel + angel);
+         return secondAngel;
+      }
+   }
+   if (side === 'left') {
+      if (angel === 180) {
+         return 1;
+      }
+      if (angel > 180) {
+         const firstAngel = angel - 180;
+         const secondAngel = 270 + 180 - rightAngel - firstAngel;
+         return secondAngel;
+      }
+      if (angel < 180) {
+         const firstAngel = 180 - angel;
+         const secondAngel = rightAngel + firstAngel - 90;
+         return secondAngel;
+      }
+   }
+   if (side === 'top') {
+      if (angel === 270) {
+         return 91;
+      }
+      if (angel > 270) {
+         const firstAngel = angel - 270;
+         const secondAngel = 180 - rightAngel - firstAngel;
+         return secondAngel;
+      }
+      if (angel < 270) {
+         const firstAngel = 270 - angel;
+         const secondAngel = 180 - (180 - (rightAngel + firstAngel));
+         return secondAngel;
+      }
+   }
+   if (side === 'bottom') {
+      if (angel === 90) {
+         return 271;
+      }
+      if (angel > 90) {
+         const firstAngel = angel - 90;
+         const secondAngel = 360 - rightAngel - firstAngel;
+         return secondAngel;
+      }
+      if (angel < 90) {
+         const firstAngel = 90 - angel;
+         const secondAngel = 180 + rightAngel + firstAngel;
+         return secondAngel;
+      }
+   }
    if (angel > 90) {
       return angel + 90;
    }

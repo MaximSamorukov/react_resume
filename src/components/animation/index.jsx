@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect } from 'react';
-import { TextStyle, Application, ICanvas, Graphics, Container, Point, RAD_TO_DEG } from 'pixi.js'
+import { TextStyle, Application, ICanvas, Graphics, Container, Point, RAD_TO_DEG, DEG_TO_RAD, Bounds } from 'pixi.js'
 import { getGeometries, getNextAngel } from './helpers';
 
+const objectsCount = 20;
    export const Animation = (argument) => {
       useEffect(() => {
          const root = document.getElementById('canvasContainer');
@@ -13,10 +14,11 @@ import { getGeometries, getNextAngel } from './helpers';
                const app = new Application();
                app.init({ autoStart: true, width: clientWidth, height: clientHeight }).then(() => {
                   root?.appendChild(app.canvas);
-                  const geoms = getGeometries(10, clientHeight, clientWidth);
+                  const geoms = getGeometries(objectsCount, clientHeight, clientWidth);
                   const alphaMap = new Map();
                   const prGeoms = geoms
-                     .map((i) => {
+                  .map((i) => {
+                        const bounds = new Bounds(i.x - i.radius, i.x + i.radius, i.y - i.radius, i.y + i.radius);
                         if (i.type === 'circle') {
                            const circ =  new Graphics()
                               .circle(i.x, i.y, i.radius)
@@ -37,37 +39,46 @@ import { getGeometries, getNextAngel } from './helpers';
                   app.ticker.add(({ deltaMS }) => {
                      app.stage.children.forEach((i) => {
                         const angel = alphaMap.get(i.uid);
-                        const alpha = RAD_TO_DEG * angel;
-                        const sinAlpha = Math.sin(alpha);
-                        const cosAlpha = Math.cos(alpha);
-                        const newPositionX = cosAlpha * deltaMS * 0.1;
-                        const newPositionY = sinAlpha * deltaMS * 0.1;
-                        i.position.x += newPositionX;
-                        i.position.y += newPositionY;
                         const { maxX, maxY, minX, minY } = i.getBounds();
-                        //const { x, y } = i.getGlobalPosition();
-                        if (maxX >= width) {
-                           console.log('right', angel)
-                           const nextAngel = getNextAngel(angel);
-                           alphaMap.set(i.uid, nextAngel);
+                        // console.log(maxX, maxY, minX, minY)
+                        try {
+                           if (maxX >= width || minX >= width) {
+                              //console.log('right', angel)
+                              const nextAngel = getNextAngel(angel, 'right');
+                              alphaMap.set(i.uid, nextAngel);
+                              throw new Error();
+                           }
+                           if (minX <= 0 || maxX <= 0) {
+                              //console.log('left', angel)
+                              const nextAngel = getNextAngel(angel, 'left');
+                              alphaMap.set(i.uid, nextAngel);
+                              throw new Error();
+                           }
+                           if (maxY >= height || minY >= height) {
+                              //console.log('bottom', angel)
+                              const nextAngel = getNextAngel(angel, 'bottom');
+                              alphaMap.set(i.uid, nextAngel);
+                              throw new Error();
+                           }
+                           if (minY <= 0 || maxY <= 0) {
+                              //console.log('top', angel)
+                              const nextAngel = getNextAngel(angel, 'top');
+                              alphaMap.set(i.uid, nextAngel);
+                              throw new Error();
+                           }
+                           throw new Error();
+                        } catch (_) {
+                           const newAngel = alphaMap.get(i.uid);
+                           const alpha = DEG_TO_RAD * newAngel;
+                           const sinAlpha = Math.sin(alpha);
+                           const cosAlpha = Math.cos(alpha);
+                           const newPositionX = cosAlpha * deltaMS * 0.1;
+                           const newPositionY = sinAlpha * deltaMS * 0.1;
+                           i.position.x += newPositionX;
+                           i.position.y += newPositionY;
+                           return i;
+
                         }
-                        if (minX <= 0) {
-                           console.log('left', angel)
-                           const nextAngel = getNextAngel(angel);
-                           alphaMap.set(i.uid, nextAngel);
-                        }
-                        if (maxY >= height) {
-                           console.log('bottom', angel)
-                           const nextAngel = getNextAngel(angel);
-                           alphaMap.set(i.uid, nextAngel);
-                        }
-                        if (minY <= 0) {
-                           console.log('top', angel)
-                           const nextAngel = getNextAngel(angel);
-                           alphaMap.set(i.uid, nextAngel);
-                        }
-                        //console.log('stage', canvas.height);
-                        return i;
                      });
                   })
                })
