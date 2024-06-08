@@ -1,15 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
+import { Switch } from 'antd';
 import { data } from "../data/data";
 import cn from "classnames";
 import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
 import { locales, languages } from '../data/libraries';
-
+import './styles/_variables.scss';
 import c from "./styles/index.module.scss";
+import { LanguageMarker } from "./LanguageMarkerComponent";
 
 export const Header = () => {
   const context = useContext(LanguageContext);
+  const ref = useRef(null);
   const { language, setLanguage, locale, setLocale } = context;
   const {
     name = "",
@@ -27,6 +30,9 @@ export const Header = () => {
       if (prev === locales.en) return locales.ru;
       return locales.en;
     });
+    if (ref.current) {
+      ref.current.blur();
+    }
   };
   const [width] = usePageSize();
   const { Content } = Layout;
@@ -40,22 +46,16 @@ export const Header = () => {
           <div
             className={c.toggler}
           >
-            <button
-              className={c.toggleLanguageBtn}
-              onClick={toggleLang}
-            >
-              <span
-                className={cn(c.en, {[c.active]: langIsEn})}
-              >
-                EN
-              </span>
-              <span> | </span>
-              <span
-                className={cn(c.ru, {[c.active]: !langIsEn})}
-              >
-                RU
-              </span>
-            </button>
+            <Switch
+              ref={ref}
+              checked={langIsEn}
+              style={{
+                backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
+              }}
+              checkedChildren={<LanguageMarker language="En" />}
+              unCheckedChildren={<LanguageMarker language="Рус" />}
+              onChange={toggleLang}
+            />
           </div>
         </Col>
       </Row>
