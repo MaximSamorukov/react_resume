@@ -51,32 +51,30 @@ export const Header = () => {
   return (
     <Content>
       <Row justify="center">
-        <Col span={4}>
-          <div
-            className={c.toggler}
-          >
-            <Switch
-              ref={languageRef}
-              checked={langIsEn}
-              style={{
-                backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
-              }}
-              checkedChildren={<LanguageMarker language={languagesLabel.EN} />}
-              unCheckedChildren={<LanguageMarker language={languagesLabel.RU} />}
-              onChange={toggleLang}
-            />
-            <Switch
-              checked={theme === themes.w}
-              ref={themeRef}
-              style={{
-                backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
-              }}
-              checkedChildren={<ThemeMarker theme={themes.w} />}
-              unCheckedChildren={<ThemeMarker theme={themes.b} />}
-              onChange={toggleTheme}
-            />
-          </div>
-        </Col>
+        <div
+          className={c.toggler}
+        >
+          <Switch
+            ref={languageRef}
+            checked={langIsEn}
+            style={{
+              backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
+            }}
+            checkedChildren={<LanguageMarker language={languagesLabel.EN} />}
+            unCheckedChildren={<LanguageMarker language={languagesLabel.RU} />}
+            onChange={toggleLang}
+          />
+          <Switch
+            checked={theme === themes.w}
+            ref={themeRef}
+            style={{
+              backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
+            }}
+            checkedChildren={<ThemeMarker theme={themes.w} />}
+            unCheckedChildren={<ThemeMarker theme={themes.b} />}
+            onChange={toggleTheme}
+          />
+        </div>
       </Row>
     </Content>
   );
