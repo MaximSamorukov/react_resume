@@ -6,6 +6,8 @@ import Codewars from "./Codewars";
 import { Deploy } from "./Deploy";
 import { WhatsappIcon } from './profiles/WhatsappIcon.jsx';
 import { TelegramIcon } from './profiles/TelegramIcon.jsx';
+import BlackThemeIcon from "./black_theme_icon.jsx";
+import WhiteThemeIcon from './light_theme_icon.jsx';
 import Email from './email.svg';
 
 const icons = {
@@ -21,6 +23,8 @@ const icons = {
   whatsapp: <WhatsappIcon />,
   telegram: <TelegramIcon />,
   email: <img width={32} height={32} src={Email} />,
+  blackTheme: <BlackThemeIcon />,
+  whiteTheme: <WhiteThemeIcon />
 };
 
 export { icons };

@@ -45,4 +45,8 @@ const copyLabel = {
   ru: "Электроонный адрес скопирован",
 }
 
-export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales, copyLabel };
+const themes = {
+  b: 'black',
+  w: 'white'
+}
+export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales, copyLabel, themes };

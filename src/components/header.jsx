@@ -5,14 +5,16 @@ import cn from "classnames";
 import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
-import { locales, languages } from '../data/libraries';
+import { locales, languages, themes } from '../data/libraries';
 import './styles/_variables.scss';
 import c from "./styles/index.module.scss";
 import { LanguageMarker } from "./LanguageMarkerComponent";
+import { ThemeMarker } from "./ThemeMarkerComponent";
 
 export const Header = () => {
   const context = useContext(LanguageContext);
-  const ref = useRef(null);
+  const languageRef = useRef(null);
+  const themeRef = useRef(null);
   const { language, setLanguage, locale, setLocale } = context;
   const {
     name = "",
@@ -30,10 +32,15 @@ export const Header = () => {
       if (prev === locales.en) return locales.ru;
       return locales.en;
     });
-    if (ref.current) {
-      ref.current.blur();
+    if (languageRef.current) {
+      languageRef.current.blur();
     }
   };
+  const toggleTheme = () => {
+    if (themeRef.current) {
+      themeRef.current.blur();
+    }
+  }
   const [width] = usePageSize();
   const { Content } = Layout;
   const isPresent = width > 750;
@@ -47,7 +54,7 @@ export const Header = () => {
             className={c.toggler}
           >
             <Switch
-              ref={ref}
+              ref={languageRef}
               checked={langIsEn}
               style={{
                 backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
@@ -55,6 +62,15 @@ export const Header = () => {
               checkedChildren={<LanguageMarker language="En" />}
               unCheckedChildren={<LanguageMarker language="Рус" />}
               onChange={toggleLang}
+            />
+            <Switch
+              ref={themeRef}
+              style={{
+                backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
+              }}
+              checkedChildren={<ThemeMarker theme={themes.w} />}
+              unCheckedChildren={<ThemeMarker theme={themes.b} />}
+              onChange={toggleTheme}
             />
           </div>
         </Col>
