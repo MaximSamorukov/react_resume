@@ -51,7 +51,7 @@ export const Header = () => {
   return (
     <Content>
       <Row justify="center">
-        <Col span={2}>
+        <Col span={4}>
           <div
             className={c.toggler}
           >
