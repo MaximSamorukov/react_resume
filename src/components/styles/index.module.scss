@@ -34,7 +34,14 @@
     }
     .course_item_school {
       align-self: center;
-      font-size: 10px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .course_item_black {
+      color: $courseItemNameColor;
+    }
+    .course_item_white {
+      color: $courseItemNameColor;
     }
     .course_item_name {
       font-size: 10px;
