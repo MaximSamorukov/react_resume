@@ -1,3 +1,5 @@
+import { Graphics } from "pixi.js";
+
 const rGBAToHexA = (rgb) => {
 
    return rgb
@@ -6,18 +8,48 @@ const rGBAToHexA = (rgb) => {
       .join("")
  }
 
+export const checkIfOutOfBounds = (geometry, { top, bottom, right, left}) => {
+   const { maxX, maxY, minX, minY } = geometry.getBounds();
+   if (maxX < top && minX < top && maxY < top && minY < top) {
+      return true;
+   }
+   if (maxX > bottom && minX > bottom && maxY > bottom && minY > bottom) {
+      return true;
+   }
+   if (maxX > right && minX > right && maxY > right && minY > right) {
+      return true;
+   }
+   if (maxX < left && minX < left && maxY < left && minY < left) {
+      return true;
+   }
+   return false
+}
+
 const getRandom = (num) => Math.round(Math.random() * num);
+
+export const getCircle = ({ height, width }) => {
+   const circle = {
+      type: 'circle',
+      x: getRandom(width),
+      y: getRandom(height),
+      alpha: getRandom(360),
+      radius: 10 + getRandom(50),
+      color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`,
+   };
+   return circle;
+}
+
+export const getGraphicsCircle = ({ width, height }) => {
+   const newCircleData = getCircle({ width, height });
+   const newCircle = new Graphics()
+      .circle(newCircleData.x, newCircleData.y, newCircleData.radius)
+      .fill(newCircleData.color);
+   return { circle: newCircle, circleData: newCircleData };
+}
 
 export const getGeometries = (count, height, width) => {
    const circles = Array(count || 5).fill({}).map(() => {
-      const circle = {
-         type: 'circle',
-         x: getRandom(width),
-         y: getRandom(height),
-         alpha: getRandom(360),
-         radius: 10 + getRandom(50),
-         color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`,
-      };
+      const circle = getCircle({ height, width });
       return circle;
    });
 

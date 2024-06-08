@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { TextStyle, Application, ICanvas, Graphics, Container, Point, RAD_TO_DEG, DEG_TO_RAD, Bounds } from 'pixi.js'
-import { getGeometries, getNextAngel } from './helpers';
+import { checkIfOutOfBounds, getCircle, getGeometries, getGraphicsCircle, getNextAngel } from './helpers';
 
 const objectsCount = 20;
    export const Animation = (argument) => {
@@ -18,7 +18,6 @@ const objectsCount = 20;
                   const alphaMap = new Map();
                   const prGeoms = geoms
                   .map((i) => {
-                        const bounds = new Bounds(i.x - i.radius, i.x + i.radius, i.y - i.radius, i.y + i.radius);
                         if (i.type === 'circle') {
                            const circ =  new Graphics()
                               .circle(i.x, i.y, i.radius)
@@ -40,7 +39,15 @@ const objectsCount = 20;
                      app.stage.children.forEach((i) => {
                         const angel = alphaMap.get(i.uid);
                         const { maxX, maxY, minX, minY } = i.getBounds();
-                        // console.log(maxX, maxY, minX, minY)
+                        const isOutOfField = checkIfOutOfBounds(i, { top: 0, bottom: height, right: width, left: 0});
+                        if (isOutOfField) {
+                           alphaMap.delete(i.uid);
+                           i.destroy();
+                           const { circle, circleData } = getGraphicsCircle({ width: clientWidth, height: clientHeight });
+                           alphaMap.set(circle.uid, circleData.alpha);
+                           app.stage.addChild(circle);
+                           return;
+                        }
                         try {
                            if (maxX >= width || minX >= width) {
                               //console.log('right', angel)
