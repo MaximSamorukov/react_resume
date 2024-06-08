@@ -10,16 +10,18 @@ const rGBAToHexA = (rgb) => {
 
 export const checkIfOutOfBounds = (geometry, { top, bottom, right, left}) => {
    const { maxX, maxY, minX, minY } = geometry.getBounds();
-   if (maxX < top && minX < top && maxY < top && minY < top) {
+   const midX = minX + (maxX - minX) / 2;
+   const midY = minY + (maxY - minY) / 2;
+   if (midY < (top - 50)) {
       return true;
    }
-   if (maxX > bottom && minX > bottom && maxY > bottom && minY > bottom) {
+   if (midY > (bottom + 50)) {
       return true;
    }
-   if (maxX > right && minX > right && maxY > right && minY > right) {
+   if (midX > (right + 50)) {
       return true;
    }
-   if (maxX < left && minX < left && maxY < left && minY < left) {
+   if (midX < (left - 50)) {
       return true;
    }
    return false

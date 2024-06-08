@@ -39,6 +39,8 @@ const objectsCount = 20;
                      app.stage.children.forEach((i) => {
                         const angel = alphaMap.get(i.uid);
                         const { maxX, maxY, minX, minY } = i.getBounds();
+                        const midX = minX + (maxX - minX) / 2;
+                        const midY = minY + (maxY - minY) / 2;
                         const isOutOfField = checkIfOutOfBounds(i, { top: 0, bottom: height, right: width, left: 0});
                         if (isOutOfField) {
                            alphaMap.delete(i.uid);
@@ -49,25 +51,25 @@ const objectsCount = 20;
                            return;
                         }
                         try {
-                           if (maxX >= width || minX >= width) {
+                           if (midX >= width) {
                               //console.log('right', angel)
                               const nextAngel = getNextAngel(angel, 'right');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
-                           if (minX <= 0 || maxX <= 0) {
+                           if (midX <= 0) {
                               //console.log('left', angel)
                               const nextAngel = getNextAngel(angel, 'left');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
-                           if (maxY >= height || minY >= height) {
+                           if (midY >= height) {
                               //console.log('bottom', angel)
                               const nextAngel = getNextAngel(angel, 'bottom');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
-                           if (minY <= 0 || maxY <= 0) {
+                           if (midY <= 0) {
                               //console.log('top', angel)
                               const nextAngel = getNextAngel(angel, 'top');
                               alphaMap.set(i.uid, nextAngel);
