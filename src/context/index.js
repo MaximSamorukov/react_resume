@@ -1,14 +1,16 @@
 import react, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { languages, locales } from "../data/libraries";
+import { languages, locales, themes } from "../data/libraries";
 
 const defaultLanguage = { language: "en" };
+const defaultTheme = themes.b;
 const defaultLocale = locales[defaultLanguage.language];
 export const LanguageContext = createContext();
 
 
 const useToggleLanguage = () => {
   const [language, setLanguage] = useState(defaultLanguage);
+  const [theme, setTheme] = useState(defaultTheme);
   const [locale, setLocale] = useState(defaultLocale);
   const { href } = window.location;
   useEffect(() => {
@@ -39,6 +41,8 @@ const useToggleLanguage = () => {
     setLanguage,
     locale,
     setLocale,
+    theme,
+    setTheme
   };
 };
 

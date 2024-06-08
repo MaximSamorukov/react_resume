@@ -1,21 +1,20 @@
 import React, { useContext, useRef } from "react";
 import { Switch } from 'antd';
 import { data } from "../data/data";
-import cn from "classnames";
 import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
-import { locales, languages, themes } from '../data/libraries';
+import { locales, languages, themes, languagesLabel } from '../data/libraries';
 import './styles/_variables.scss';
-import c from "./styles/index.module.scss";
 import { LanguageMarker } from "./LanguageMarkerComponent";
 import { ThemeMarker } from "./ThemeMarkerComponent";
+import c from "./styles/index.module.scss";
 
 export const Header = () => {
   const context = useContext(LanguageContext);
   const languageRef = useRef(null);
   const themeRef = useRef(null);
-  const { language, setLanguage, locale, setLocale } = context;
+  const { language, setLanguage, locale, setLocale, theme, setTheme } = context;
   const {
     name = "",
     surname = "",
@@ -37,6 +36,9 @@ export const Header = () => {
     }
   };
   const toggleTheme = () => {
+    setTheme((prev) => {
+      return prev === themes.b ? themes.w : themes.b
+    })
     if (themeRef.current) {
       themeRef.current.blur();
     }
@@ -59,11 +61,12 @@ export const Header = () => {
               style={{
                 backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
               }}
-              checkedChildren={<LanguageMarker language="En" />}
-              unCheckedChildren={<LanguageMarker language="Рус" />}
+              checkedChildren={<LanguageMarker language={languagesLabel.EN} />}
+              unCheckedChildren={<LanguageMarker language={languagesLabel.RU} />}
               onChange={toggleLang}
             />
             <Switch
+              checked={theme === themes.w}
               ref={themeRef}
               style={{
                 backgroundColor: 'var(--toggleLanguageBtnColorBlack)'

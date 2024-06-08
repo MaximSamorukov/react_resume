@@ -35,6 +35,11 @@ const languages = {
   RU: "ru",
 };
 
+const languagesLabel = {
+  EN: "En",
+  RU: "Рус",
+};
+
 const locales = {
   en: "en-US",
   ru: "ru-RU",
@@ -49,4 +54,4 @@ const themes = {
   b: 'black',
   w: 'white'
 }
-export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales, copyLabel, themes };
+export { titles_en, titles_ru, links_table_en, links_table_ru, languages, locales, copyLabel, themes, languagesLabel };
