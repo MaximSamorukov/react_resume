@@ -54,27 +54,29 @@ const objectsCount = 20;
                            app.stage.addChild(circle);
                            return;
                         }
+                        let deltaX = 0;
+                        let deltaY = 0;
                         try {
                            if (midX >= width) {
-                              //console.log('right', angel)
+                              deltaX = width - midX;
                               const nextAngel = getNextAngel(angel, 'right');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
                            if (midX <= 0) {
-                              //console.log('left', angel)
+                              deltaX = 0 - midX;
                               const nextAngel = getNextAngel(angel, 'left');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
                            if (midY >= height) {
-                              //console.log('bottom', angel)
+                              deltaY = height - midY;
                               const nextAngel = getNextAngel(angel, 'bottom');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
                            if (midY <= 0) {
-                              //console.log('top', angel)
+                              deltaY = 0 - midY;
                               const nextAngel = getNextAngel(angel, 'top');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
@@ -88,8 +90,8 @@ const objectsCount = 20;
                            const cosAlpha = Math.cos(alpha);
                            const newPositionX = cosAlpha * deltaMS * velocity;
                            const newPositionY = sinAlpha * deltaMS * velocity;
-                           i.position.x += newPositionX;
-                           i.position.y += newPositionY;
+                           i.position.x += newPositionX + deltaX;
+                           i.position.y += newPositionY + deltaY;
                            return i;
 
                         }
