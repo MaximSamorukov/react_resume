@@ -16,6 +16,7 @@ const objectsCount = 20;
                   root?.appendChild(app.canvas);
                   const geoms = getGeometries(objectsCount, clientHeight, clientWidth);
                   const alphaMap = new Map();
+                  const velocityMap = new Map();
                   const prGeoms = geoms
                   .map((i) => {
                         if (i.type === 'circle') {
@@ -23,6 +24,7 @@ const objectsCount = 20;
                               .circle(i.x, i.y, i.radius)
                               .fill(i.color);
                            alphaMap.set(circ.uid, i.alpha);
+                           velocityMap.set(circ.uid, i.velocity);
                            return circ;
                         }
                         if (i.type === 'line') {
@@ -44,9 +46,11 @@ const objectsCount = 20;
                         const isOutOfField = checkIfOutOfBounds(i, { top: 0, bottom: height, right: width, left: 0});
                         if (isOutOfField) {
                            alphaMap.delete(i.uid);
+                           velocityMap.delete(i.uid);
                            i.destroy();
                            const { circle, circleData } = getGraphicsCircle({ width: clientWidth, height: clientHeight });
                            alphaMap.set(circle.uid, circleData.alpha);
+                           velocityMap.set(circle.uid, circleData.velocity);
                            app.stage.addChild(circle);
                            return;
                         }
@@ -78,11 +82,12 @@ const objectsCount = 20;
                            throw new Error();
                         } catch (_) {
                            const newAngel = alphaMap.get(i.uid);
+                           const velocity = velocityMap.get(i.uid);
                            const alpha = DEG_TO_RAD * newAngel;
                            const sinAlpha = Math.sin(alpha);
                            const cosAlpha = Math.cos(alpha);
-                           const newPositionX = cosAlpha * deltaMS * 0.1;
-                           const newPositionY = sinAlpha * deltaMS * 0.1;
+                           const newPositionX = cosAlpha * deltaMS * velocity;
+                           const newPositionY = sinAlpha * deltaMS * velocity;
                            i.position.x += newPositionX;
                            i.position.y += newPositionY;
                            return i;

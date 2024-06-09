@@ -27,7 +27,7 @@ export const checkIfOutOfBounds = (geometry, { top, bottom, right, left}) => {
    return false
 }
 
-const getRandom = (num) => Math.round(Math.random() * num);
+const getRandom = (num = 1) => Math.round(Math.random() * num);
 
 export const getCircle = ({ height, width }) => {
    const circle = {
@@ -37,6 +37,7 @@ export const getCircle = ({ height, width }) => {
       alpha: getRandom(360),
       radius: 10 + getRandom(50),
       color: `#${rGBAToHexA([getRandom(255), getRandom(255), getRandom(255)])}`,
+      velocity: getRandom(0.5) + 0.1,
    };
    return circle;
 }
