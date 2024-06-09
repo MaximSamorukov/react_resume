@@ -17,6 +17,7 @@ const objectsCount = 20;
                   const geoms = getGeometries(objectsCount, clientHeight, clientWidth);
                   const alphaMap = new Map();
                   const velocityMap = new Map();
+                  const circlesMap = new Map();
                   const prGeoms = geoms
                   .map((i) => {
                         if (i.type === 'circle') {
@@ -25,6 +26,7 @@ const objectsCount = 20;
                               .fill(i.color);
                            alphaMap.set(circ.uid, i.alpha);
                            velocityMap.set(circ.uid, i.velocity);
+                           circlesMap.set(circ.uid, i);
                            return circ;
                         }
                         if (i.type === 'line') {
@@ -47,36 +49,43 @@ const objectsCount = 20;
                         if (isOutOfField) {
                            alphaMap.delete(i.uid);
                            velocityMap.delete(i.uid);
+                           circlesMap.delete(i.uid);
                            i.destroy();
                            const { circle, circleData } = getGraphicsCircle({ width: clientWidth, height: clientHeight });
                            alphaMap.set(circle.uid, circleData.alpha);
                            velocityMap.set(circle.uid, circleData.velocity);
+                           circlesMap.set(circle.uid, circleData);
                            app.stage.addChild(circle);
                            return;
                         }
                         let deltaX = 0;
                         let deltaY = 0;
+                        const radius = circlesMap.get(i.uid).radius;
+                        const rightBound = width - radius;
+                        const leftBound = 0 + radius;
+                        const topBound = 0 + radius;
+                        const bottomBound = height - radius;
                         try {
-                           if (midX >= width) {
-                              deltaX = width - midX;
+                           if (midX >= rightBound) {
+                              deltaX = rightBound - midX;
                               const nextAngel = getNextAngel(angel, 'right');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
-                           if (midX <= 0) {
-                              deltaX = 0 - midX;
+                           if (midX <= leftBound) {
+                              deltaX = leftBound - midX;
                               const nextAngel = getNextAngel(angel, 'left');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
-                           if (midY >= height) {
-                              deltaY = height - midY;
+                           if (midY >= bottomBound) {
+                              deltaY = bottomBound - midY;
                               const nextAngel = getNextAngel(angel, 'bottom');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
                            }
-                           if (midY <= 0) {
-                              deltaY = 0 - midY;
+                           if (midY <= topBound) {
+                              deltaY = topBound - midY;
                               const nextAngel = getNextAngel(angel, 'top');
                               alphaMap.set(i.uid, nextAngel);
                               throw new Error();
