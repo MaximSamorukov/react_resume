@@ -3,7 +3,13 @@
 .itemHeader {
   width: 200px;
   margin-bottom: 5px !important;
-  color: $fontBlackThemeColor !important;
+  color: inherit;
+  &_blackTheme {
+    color: $fontBlackThemeColor !important;
+  }
+  &_whiteTheme {
+    color: $fontWhiteThemeColor !important;
+  }
 }
 
 .content {

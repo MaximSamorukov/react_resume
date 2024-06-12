@@ -11,10 +11,18 @@
 }
 
 .wrapper_inner {
-  background-color: $wrapperOuterBackgroundColorBlack;
+  color: var(--fontBlackThemeColor);
   max-width: 1000px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
 
+.whiteTheme {
+  :global{
+    * {
+      color: var(--fontWhiteThemeColor);
+
+    }
+  }
+}
