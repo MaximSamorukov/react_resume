@@ -48,6 +48,7 @@ export const Header = () => {
   const isPresent = width > 750;
   const contentSize = isPresent ? 12 : 16;
   const langIsEn = language.language === "en";
+  const backgroundColor = theme === themes.b ? 'var(--toggleLanguageBtnColorBlack)' : 'var(--toggleLanguageBtnColorWhite)'
   return (
     <Content>
       <Row justify="center">
@@ -58,7 +59,7 @@ export const Header = () => {
             ref={languageRef}
             checked={langIsEn}
             style={{
-              backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
+              backgroundColor
             }}
             checkedChildren={<LanguageMarker language={languagesLabel.EN} />}
             unCheckedChildren={<LanguageMarker language={languagesLabel.RU} />}
@@ -68,7 +69,7 @@ export const Header = () => {
             checked={theme === themes.w}
             ref={themeRef}
             style={{
-              backgroundColor: 'var(--toggleLanguageBtnColorBlack)'
+              backgroundColor
             }}
             checkedChildren={<ThemeMarker theme={themes.w} />}
             unCheckedChildren={<ThemeMarker theme={themes.b} />}
