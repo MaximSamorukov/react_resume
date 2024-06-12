@@ -7,6 +7,7 @@ import c from "./styles/profile.module.scss";
 const Profiles = () => {
   const [profiles_, setProfiles] = useState([]);
   const {
+    theme,
     language: { language = "" },
   } = useContext(LanguageContext);
   const profiles = ["linkedin", "github", "resume_en", "resume_ru"];
@@ -23,7 +24,7 @@ const Profiles = () => {
           return (
             <div key={name} className={c.profile_item}>
               <a download={download} target={target} href={url}>
-                <div className={c.profile_icon}>{icons[name]}</div>
+                <div className={c.profile_icon}>{icons[theme][name]}</div>
                 <div className={c.profile_label}>{label}</div>
               </a>
             </div>

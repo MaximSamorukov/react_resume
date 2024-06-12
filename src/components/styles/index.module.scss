@@ -34,7 +34,14 @@
     }
     .course_item_school {
       align-self: center;
-      font-size: 10px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .course_item_black {
+      color: $courseItemNameColor;
+    }
+    .course_item_white {
+      color: $courseItemNameColor;
     }
     .course_item_name {
       font-size: 10px;
@@ -50,9 +57,21 @@
   }
 }
 
+.toggler {
+  background-color: transparent;
+  width: 140px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: auto;
+}
 .toggleLanguageBtn {
   border: none;
-  background-color: $toggleLanguageBtnColor;
+  background-color: transparent;
 }
 
 .en, .ru {
@@ -61,4 +80,24 @@
 
 .active {
   color: $toggleLanguageActive
+}
+
+.languageMarker {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  span {
+    font-size: 16px;
+  }
+}
+
+.themeMarker {
+  width: 25px;
+  height: 25px;
+  color: $fontBlackThemeColor;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4px;
 }

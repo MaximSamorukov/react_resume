@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
+import { Switch } from 'antd';
 import { data } from "../data/data";
-import cn from "classnames";
 import { Row, Col, Layout } from "antd";
 import { usePageSize } from "../hooks/hooks";
 import { LanguageContext } from "../context";
-import { locales, languages } from '../data/libraries';
-
+import { locales, languages, themes, languagesLabel } from '../data/libraries';
+import './styles/_variables.scss';
+import { LanguageMarker } from "./LanguageMarkerComponent";
+import { ThemeMarker } from "./ThemeMarkerComponent";
 import c from "./styles/index.module.scss";
 
 export const Header = () => {
   const context = useContext(LanguageContext);
-  const { language, setLanguage, locale, setLocale } = context;
+  const languageRef = useRef(null);
+  const themeRef = useRef(null);
+  const { language, setLanguage, locale, setLocale, theme, setTheme } = context;
   const {
     name = "",
     surname = "",
@@ -27,41 +31,51 @@ export const Header = () => {
       if (prev === locales.en) return locales.ru;
       return locales.en;
     });
+    if (languageRef.current) {
+      languageRef.current.blur();
+    }
   };
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      return prev === themes.b ? themes.w : themes.b
+    })
+    if (themeRef.current) {
+      themeRef.current.blur();
+    }
+  }
   const [width] = usePageSize();
   const { Content } = Layout;
   const isPresent = width > 750;
   const contentSize = isPresent ? 12 : 16;
   const langIsEn = language.language === "en";
+  const backgroundColor = theme === themes.b ? 'var(--toggleLanguageBtnColorBlack)' : 'var(--toggleLanguageBtnColorWhite)'
   return (
     <Content>
       <Row justify="center">
-        <Col span={2}>
-          <div
+        <div
+          className={c.toggler}
+        >
+          <Switch
+            ref={languageRef}
+            checked={langIsEn}
             style={{
-              width: "70px",
-              marginRight: "auto",
-              marginLeft: "auto",
+              backgroundColor
             }}
-          >
-            <button
-              className={c.toggleLanguageBtn}
-              onClick={toggleLang}
-            >
-              <span
-                className={cn(c.en, {[c.active]: langIsEn})}
-              >
-                EN
-              </span>
-              <span> | </span>
-              <span
-                className={cn(c.ru, {[c.active]: !langIsEn})}
-              >
-                RU
-              </span>
-            </button>
-          </div>
-        </Col>
+            checkedChildren={<LanguageMarker language={languagesLabel.EN} />}
+            unCheckedChildren={<LanguageMarker language={languagesLabel.RU} />}
+            onChange={toggleLang}
+          />
+          <Switch
+            checked={theme === themes.w}
+            ref={themeRef}
+            style={{
+              backgroundColor
+            }}
+            checkedChildren={<ThemeMarker theme={themes.w} />}
+            unCheckedChildren={<ThemeMarker theme={themes.b} />}
+            onChange={toggleTheme}
+          />
+        </div>
       </Row>
     </Content>
   );

@@ -20,7 +20,6 @@ export const JobItem = ({ item }) => {
           <span>{typeof end === "string" ? end : nowDaysString}</span>
         </div>
       </div>
-
       <div className={`ui_ bulleted_ list_ ${c.bulleted_list}`}>
         {description.map((i, index) => (
           <div key={index} className={`_item ${c.list_item}`}>

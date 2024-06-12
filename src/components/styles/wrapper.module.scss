@@ -5,13 +5,24 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: $wrapperOuterBackgroundColorBlack;
+  position: relative;
+  // display: none;
 }
 
 .wrapper_inner {
-  border: 4px solid $innerWrapperBorderColor;
-  border-radius: 30px;
+  color: var(--fontBlackThemeColor);
   max-width: 1000px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.whiteTheme {
+  :global{
+    * {
+      color: var(--fontWhiteThemeColor);
+
+    }
+  }
 }

@@ -1,0 +1,14 @@
+@import "./variables";
+
+.layout {
+   box-sizing: border-box;
+   padding: 10px;
+   margin: 0px;
+   border-radius: 30px;
+   background-color: $layoutBackgroundColorBlack;
+   border: 4px solid $innerWrapperBorderColor;
+
+   &_whiteTheme {
+      background-color: $layoutBackgroundColorWhite;
+   }
+}

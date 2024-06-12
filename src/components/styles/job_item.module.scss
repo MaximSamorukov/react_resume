@@ -3,6 +3,10 @@
 .content {
   margin-top: 10px;
 
+  @media (max-width: 1010px) {
+    max-width: 550px;
+  }
+
   .company_wrapper {
     display: flex;
     flex-direction: row;
@@ -11,10 +15,15 @@
 
     .company_name {
       margin-right: 10px;
+
+      * {
+        color: inherit;
+      }
     }
 
     .company_years_of_work {
-      line-height: 18px;
+      font-size: 14px;
+      line-height: 14px;
     }
   }
   .bulleted_list {

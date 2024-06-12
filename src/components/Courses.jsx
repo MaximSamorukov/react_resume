@@ -6,7 +6,7 @@ import c from "./styles/index.module.scss";
 
 const Courses = () => {
   const {
-    language: { language },
+    language: { language }, theme
   } = useContext(LanguageContext);
   const [courses, setCourses] = useState([]);
   useEffect(() => {
@@ -16,7 +16,7 @@ const Courses = () => {
   return (
     <div className={c.courses_layout}>
       {courses.sort((a, b) => a.index - b.index)?.map((course, index) => (
-        <CourseItem key={index} className={c} course={course} />
+        <CourseItem key={index} className={c} course={course} theme={theme} />
       ))}
     </div>
   );
