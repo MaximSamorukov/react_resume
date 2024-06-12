@@ -1,14 +1,14 @@
 import react from "react";
 import { icons } from "../icons";
 
-const OpenBtn = ({ className, onClick, type }) => {
-
+const OpenBtn = ({ className, onClick, type, theme }) => {
+  
   return (
     <button
       onClick={onClick}
       className={className}
     >
-      {icons[type]}
+      {icons[theme][type]}
     </button>
   );
 };

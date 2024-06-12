@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import cn from "classnames";
 import { Link } from "./Link";
 import { OpenBtn } from "./Open_btn";
 import s from "./styles/project_item.module.scss";
 import { getStyle } from "./helpers";
+import { LanguageContext } from "../context";
 
 const ProjectItem = ({
   title,
@@ -13,6 +14,7 @@ const ProjectItem = ({
   state,
 }) => {
   const [open, setOpen] = useState(false);
+  const { theme } = useContext(LanguageContext);
   const ref = useRef(null);
   const width = ref.current?.clientWidth;
   const less500 = width <= 500;
@@ -42,10 +44,10 @@ const ProjectItem = ({
       </div>
       <div className={cn(s.controls, open ? s.controls_open : s.controls_close)}>
         <div className={cn(s.btn, {[s.btn_open]: open, [s.btn_close]: open })}>
-          <OpenBtn className={cn(s.btn_icon, open ? s.btn_icon_open : s.btn_icon_close )} onClick={onClick} type="open_btn" />
+          <OpenBtn theme={theme} className={cn(s.btn_icon, open ? s.btn_icon_open : s.btn_icon_close )} onClick={onClick} type="open_btn" />
         </div>
           {links.map((link, index) => (
-            <Link style={getStyle(open, index, less500)} key={link.url} url={link.url} type={link.type} />
+            <Link theme={theme} style={getStyle(open, index, less500)} key={link.url} url={link.url} type={link.type} />
           ))}
       </div>
     </div>

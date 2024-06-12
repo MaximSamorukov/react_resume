@@ -3,6 +3,10 @@
 .content {
   margin-top: 10px;
 
+  @media (max-width: 1010px) {
+    max-width: 550px;
+  }
+
   .company_wrapper {
     display: flex;
     flex-direction: row;
