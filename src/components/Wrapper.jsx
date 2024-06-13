@@ -11,7 +11,7 @@ const Wrapper = ({ children }) => {
 
   return (
     <div className={s.wrapper_outer}>
-       <Animation argument={{}} />
+       <Animation />
       <div className={cn(s.wrapper_inner, { [s.whiteTheme]: !isBlackTheme })}>{children}</div>
     </div>
   );

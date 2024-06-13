@@ -3,7 +3,7 @@ import { TextStyle, Application, ICanvas, Graphics, Container, Point, RAD_TO_DEG
 import { checkIfOutOfBounds, getCircle, getGeometries, getGraphicsCircle, getNextAngel } from './helpers';
 
 const objectsCount = 20;
-   export const Animation = (argument) => {
+   export const Animation = () => {
       useEffect(() => {
          const root = document.getElementById('canvasContainer');
          const canvas = document.querySelector("canvas");
@@ -113,6 +113,6 @@ const objectsCount = 20;
                canvas?.remove()
             }
 
-      }, [argument]);
+      }, []);
       return (<></>)
 }
