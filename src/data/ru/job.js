@@ -1,6 +1,6 @@
 export const job = [
   {
-    company: "Сфера, АО",
+    company: "Программ-Сервис, ООО",
     active: true,
     title: "Разработчик интерфейсов",
     start: "02.08.2023",
